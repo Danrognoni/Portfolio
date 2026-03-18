@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import VanillaTilt from 'vanilla-tilt'; 
 
 @Component({
   selector: 'app-services',
@@ -6,6 +7,17 @@ import { Component } from '@angular/core';
   templateUrl: './services.html',
   styleUrl: './services.css',
 })
-export class Services {
+export class Services implements AfterViewInit{
 
+  ngAfterViewInit() {
+    const elements = document.querySelectorAll<HTMLElement>('[data-tilt]');
+    VanillaTilt.init(Array.from(elements), {
+      max: 15,         
+      speed: 400,      
+      glare: true,     
+      'max-glare': 0.3, 
+      perspective: 1000 
+    });
+  }
 }
+
