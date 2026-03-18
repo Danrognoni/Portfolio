@@ -44,6 +44,33 @@ module.exports = {
       md: "0 -3px 36px rgba(0, 0, 0, 0.12)",
     },
     extend: {
+      animation: {
+        'blob': 'blob 4s infinite',
+        'fade-in-up': 'fadeInUp 0.4s ease-out forwards',
+        'wiggle': 'wiggle 1s ease-in-out infinite',
+        'text-gradient': 'text-gradient 3s linear infinite',
+      },
+      keyframes: {
+        blob: {
+          '0%': { transform: 'translate(0px, 0px) scale(1)' },
+          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+          '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'text-gradient': {
+          'to': {
+            'background-position': '200% center',
+          },
+        },
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      },
       spacing: {
         13: "3.25rem",
         15: "3.75rem",
