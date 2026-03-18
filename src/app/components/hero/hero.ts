@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { NgxTypedJsModule } from 'ngx-typed-js'; 
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  standalone: true,
+  imports: [NgxTypedJsModule], 
   templateUrl: './hero.html',
-  styleUrl: './hero.css',
 })
-export class Hero {
-
-}
+export class Hero {}
