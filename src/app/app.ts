@@ -1,21 +1,31 @@
-import { Component, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NavbarComponent } from "./components/navbar/navbar";
-import { Hero } from "./components/hero/hero";
-import { About } from "./components/about/about";
+import { NavbarComponent as Navbar} from './components/navbar/navbar';
+import { Hero } from './components/hero/hero';
+import { About } from './components/about/about';
+import { Portfolio } from './components/portfolio/portfolio';
+import { Work } from './components/work/work';
+import { Contact } from './components/contact/contact';
+import { Footer } from './components/footer/footer';
+import * as AOS from 'aos';
+import { Blog } from "./components/blog/blog"; 
 import { Services } from "./components/services/services";
-import { Portfolio } from "./components/portfolio/portfolio";
-import { Footer } from "./components/footer/footer";
-import { Work } from "./components/work/work";
-import { Blog } from "./components/blog/blog";
-import { Contact } from "./components/contact/contact";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavbarComponent, Hero, About, Services, Portfolio, Footer, Work,  Blog, Contact],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [RouterOutlet, Navbar, Hero, About, Services, Portfolio, Work, Contact, Footer, Blog],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('Portfolio');
+export class App implements OnInit { 
+  title = 'portfolio';
+
+  ngOnInit() {
+
+    AOS.init({
+      duration: 1000, 
+      once: true,     
+      offset: 100     
+    });
+  }
 }
