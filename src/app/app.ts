@@ -10,7 +10,7 @@ import { Contact } from "./components/contact/contact";
 import { Footer } from "./components/footer/footer";
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
@@ -19,10 +19,20 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './app.html',
   imports: [NavbarComponent, Hero, About, Services, Portfolio, Work, Blog, Contact, Footer, RouterOutlet, CommonModule, TranslateModule]
 })
+
 export class App {
   private konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown']; 
   private currentSequence: string[] = [];
   public konamiActivated = false;
+
+  private tapCount = 0;
+  private lastTapTime = 0;
+  private readonly TAP_THRESHOLD = 500; 
+
+  constructor(private translate: TranslateService) {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en');
+  }
 
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
@@ -32,6 +42,25 @@ export class App {
     }
     if (this.isKonamiCodeCorrect()) {
       this.triggerEasterEgg();
+    }
+  }
+
+  @HostListener('window:click', ['$event'])
+  handleTapEvent(event: MouseEvent) {
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - this.lastTapTime;
+
+    if (tapLength < this.TAP_THRESHOLD && tapLength > 0) {
+      this.tapCount++;
+    } else {
+      this.tapCount = 1;
+    }
+
+    this.lastTapTime = currentTime;
+
+    if (this.tapCount === 5) {
+      this.triggerEasterEgg();
+      this.tapCount = 0; 
     }
   }
 
@@ -47,10 +76,10 @@ export class App {
     audio.volume = 0.5;
     audio.play();
 
- 
     setTimeout(() => {
       this.konamiActivated = false;
       this.currentSequence = []; 
+      this.tapCount = 0; 
     }, 5000); 
   }
 }

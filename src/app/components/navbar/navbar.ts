@@ -22,15 +22,9 @@ export class NavbarComponent {
   }
 
 
-  changeLanguage(){
-    const currentLanguage = this.translate.getCurrentLang();
-    let newLanguage;
-    if(currentLanguage === 'en'){
-      newLanguage = 'es';
-    }
-    else{
-      newLanguage = 'en'
-    }
+changeLanguage() {
+  const currentLanguage = this.translate.currentLang || 'en';
+  const newLanguage = currentLanguage === 'en' ? 'es' : 'en';
     this.translate.use(newLanguage);
-  }
+}
 }
