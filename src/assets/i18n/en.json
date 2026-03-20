@@ -111,10 +111,12 @@
     "TITLE": "Check out my Portfolio"
   },
   "BLOG": {
-    "TITLE": "I also like to write",
+    "TITLE": "I also like write about physics",
     "READ_MORE": "Read More",
-    "POST_1_TITLE": "Best practices in Spring Boot",
-    "POST_1_DESC": "Exploring software architecture and exception handling."
+    "POST_1_TITLE": "Quantum entanglement and superposition",
+    "POST_1_DESC": "Modern physics and its follies.",
+    "POST_1_CONTENT": "It is said in modern physics, where quantum physics dominates, that a particle can be separated from another and still maintain a relationship, staying connected. It is also said that a particle can be in any location until an interpreter measures it. This brings some thoughts to mind: if the second theory is real (the one about the particle being everywhere), then the human moves to a different perspective in nature, as a participant in what they see. In a world of probabilities, does the human provide certainty? Does the human stop being a spectator to become a participant in the experiment with their observation?",
+    "POST_1_QUOTE": "The human as the main participant in the creation of the reality we perceive."
   },
   "FOOTER": {
     "COPYRIGHT": "© Copyright 2026 Dante Rognoni. All rights reserved."

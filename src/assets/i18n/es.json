@@ -109,10 +109,12 @@
     "TITLE": "Mirá mi Portfolio"
   },
   "BLOG": {
-    "TITLE": "También me gusta escribir",
+    "TITLE": "También me gusta escribir sobre física",
     "READ_MORE": "Leer más",
-    "POST_1_TITLE": "Buenas prácticas en Spring Boot",
-    "POST_1_DESC": "Explorando arquitectura de software y manejo de excepciones."
+    "POST_1_TITLE": "Entrelazamiento cuántico y superposición",
+    "POST_1_DESC": "La física moderna y sus locuras.",
+    "POST_1_CONTENT": "Se dice en la física moderna, donde la física cuántica domina, que una partícula puede ser separada de otra y que igualmente sigan teniendo relación, sigan estando conectadas. También se dice que una partícula puede estar en cualquier lado hasta que un intérprete la mida. Esto extrae de mí algunos pensamientos: si la segunda teoría es real (la de la partícula en todos lados), entonces el humano pasa a otra perspectiva en la naturaleza, ya que es partícipe de lo que ve. En el mundo de probabilidades, ¿el humano da certeza? El humano deja de ser espectador para convertirse en participante del experimento con su observación.",
+    "POST_1_QUOTE": "El humano como principal partícipe en la creación de la realidad que percibimos."
   },
   "FOOTER": {
     "COPYRIGHT": "© Copyright 2026 Dante Rognoni. Todos los derechos reservados."

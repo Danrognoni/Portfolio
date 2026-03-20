@@ -5,8 +5,8 @@
     </h2>
     <div class="mx-auto grid w-full grid-cols-1 gap-6 pt-12 sm:w-3/4 lg:w-full lg:grid-cols-3 xl:gap-10">
       
-      <a href="/post" class="shadow">
-        <div style="background-image: url('assets/img/post-01.png')" class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
+      <div (click)="togglePost()" class="shadow cursor-pointer">
+        <div style="background-image: url('assets/img/fisica.jpg')" class="group relative h-72 bg-cover bg-center bg-no-repeat sm:h-84 lg:h-64 xl:h-72">
           <span class="absolute inset-0 block bg-gradient-to-b from-blog-gradient-from to-blog-gradient-to bg-cover bg-center bg-no-repeat opacity-10 transition-opacity group-hover:opacity-50"></span>
           <span class="absolute right-0 bottom-0 mr-4 mb-4 block rounded-full border-2 border-white px-6 py-2 text-center font-body text-sm font-bold uppercase text-white md:text-base">
             {{ 'BLOG.READ_MORE' | translate }}
@@ -20,8 +20,39 @@
             {{ 'BLOG.POST_1_DESC' | translate }}
           </span>
         </div>
-      </a>
+      </div>
 
     </div>
   </div>
 </div>
+
+@if (showPost) {
+  @if (showPost) {
+  <div class="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
+    <div class="relative w-full max-w-3xl bg-white rounded-lg shadow-2xl overflow-hidden animate-fade-in">
+      
+      <button (click)="togglePost()" class="absolute top-4 right-4 text-3xl text-grey-40 hover:text-primary z-10">
+        &times;
+      </button>
+
+      <div class="p-8 md:p-12 max-h-[85vh] overflow-y-auto">
+        <h3 class="text-3xl font-header font-bold text-primary uppercase mb-6">
+          {{ 'BLOG.POST_1_TITLE' | translate }}
+        </h3>
+        
+        <div class="font-body text-grey-20 text-lg leading-relaxed space-y-4">
+          <p>{{ 'BLOG.POST_1_DESC' | translate }}</p>
+          
+          <p>
+            {{ 'BLOG.POST_1_CONTENT' | translate }}
+          </p>
+          
+          <div class="bg-grey-10 p-4 border-l-4 border-primary italic">
+            "{{ 'BLOG.POST_1_QUOTE' | translate }}"
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+}

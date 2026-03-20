@@ -8,5 +8,10 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './blog.css',
 })
 export class Blog {
+  
+public showPost = false;
 
+  togglePost() {
+    this.showPost = !this.showPost;
+  }
 }
