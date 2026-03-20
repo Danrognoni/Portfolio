@@ -1,0 +1,10 @@
+{
+  "NAVBAR": {
+    "HOME": "Inicio",
+    "ABOUT": "Sobre mí",
+    "PORTFOLIO": "Portafolio"
+  },
+  "HERO": {
+    "GREETING": "Hola, soy Dante Rognoni"
+  }
+}
