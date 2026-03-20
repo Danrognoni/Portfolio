@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-work',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './work.html',
   styleUrl: './work.css',
 })

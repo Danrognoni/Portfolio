@@ -46,7 +46,9 @@
   "CARD_5_TITLE": "Looker Studio y Power BI",
   "CARD_5_DESC": "Creación y gestión de grandes volúmenes de datos para el diseño de paneles (dashboards) interactivos.",
   "CARD_6_TITLE": "Metodologías Ágiles (Scrum)",
-  "CARD_6_DESC": "Experiencia trabajando con metodologías Scrum para asegurar la entrega eficiente de proyectos, mejora continua y colaboración efectiva en equipo."
+  "CARD_6_DESC": "Experiencia trabajando con metodologías Scrum para asegurar la entrega eficiente de proyectos, mejora continua y colaboración efectiva en equipo.",
+  "CARD_7_TITLE": "Implementación de IA Local",
+    "CARD_7_DESC": "Despliegue de Modelos de Lenguaje (LLMs) privados en hardware local usando <b>Ollama</b> para entornos de Inteligencia Artificial seguros y personalizados."
 },
   "EXPERIENCE": {
     "TITLE": "Experiencia Profesional",
@@ -60,21 +62,27 @@
     "JOB_1_BULLET_3": "Integración de API de Mercado Pago para checkout y servicio SMTP automatizado."
   },
   "WORK": {
-    "TITLE": "Proyectos Destacados",
-    "SUBTITLE": "Una selección de mis trabajos técnicos",
-    "PROJ_1_TITLE": "Stock Store (Plataforma Completa)",
-    "PROJ_1_DATE": "Dic 2025 - Mar 2026",
-    "PROJ_1_TECH": "Java • Spring Boot • Angular • SQL",
-    "PROJ_1_DESC": "Desarrollo completo de una plataforma de e-commerce. Implementación de API REST con manejo global de excepciones, seguridad JWT y checkout con Mercado Pago. Frontend SPA responsivo utilizando Angular Material, Guards e Interceptors.",
-    "PROJ_2_TITLE": "Backend Stock Store",
-    "PROJ_2_DATE": "Dic 2025 - Mar 2026",
-    "PROJ_2_TECH": "Spring Boot • Hibernate • JWT",
-    "PROJ_2_DESC": "Creación de la lógica de negocio y API RESTful. Gestión de roles de usuario, persistencia de datos y despliegue del servicio.",
-    "PROJ_3_TITLE": "Frontend Stock Store",
-    "PROJ_3_DATE": "Dic 2025 - Mar 2026",
-    "PROJ_3_TECH": "Angular • TypeScript • Material",
-    "PROJ_3_DESC": "Interfaz de usuario intuitiva para la gestión de inventario y compras, integrada de forma fluida con el backend y servicios de pago."
-  },
+  "TITLE": "Mis Proyectos",
+  "SUBTITLE": "Aquí están mis últimos repositorios en GitHub",
+  "PROJ_1_TYPE": "Proyecto Full Stack",
+  "PROJ_1_TITLE": "Stock-Store",
+  "PROJ_1_DESC": "Una plataforma integral para la gestión de inventario y operaciones de tienda online. Construida con tecnologías web modernas para manejar flujos completos de e-commerce.",
+  "PROJ_2_TYPE": "Aplicación Web",
+  "PROJ_2_TITLE": "Eventify",
+  "PROJ_2_DESC": "Una aplicación web completa diseñada para crear, gestionar y organizar eventos de forma eficiente, centrada en una experiencia de usuario limpia e intuitiva.",
+  "PROJ_3_TYPE": "Aplicación Financiera",
+  "PROJ_3_TITLE": "Money Tracker",
+  "PROJ_3_DESC": "Una aplicación intuitiva desarrollada para el seguimiento de ahorros personales y gestión del dinero, ayudando a los usuarios a mantener sus finanzas en orden.",
+  "PROJ_4_TYPE": "Análisis de Datos",
+  "PROJ_4_TITLE": "Dashboards en Looker Studio",
+  "PROJ_4_DESC": "Creación de paneles de análisis personalizados para un streamer, permitiendo visualizar y analizar datos de videojuegos y métricas de rendimiento en tiempo real.",
+  "PROJ_5_TYPE": "Proyecto UTN - Java",
+  "PROJ_5_TITLE": "Sistema de Gestión para Gimnasios",
+  "PROJ_5_DESC": "Un robusto sistema administrativo para gimnasios construido en Java. Maneja socios, personal, membresías y equipamiento mediante persistencia de archivos (JSON).",
+  "PROJ_6_TYPE": "Proyecto UTN - C",
+  "PROJ_6_TITLE": "Sistema de Reservas de Hotel",
+  "PROJ_6_DESC": "Aplicación de reservas de hotel basada en consola desarrollada en C. Maneja la disponibilidad de habitaciones, datos de clientes y reservas utilizando archivos binarios."
+},
   "STATISTICS": {
     "STAT_1": "Años de Estudio",
     "STAT_2": "Proyectos Completados",
