@@ -1,10 +1,116 @@
 {
   "NAVBAR": {
-    "HOME": "Home",
     "ABOUT": "About me",
-    "PORTFOLIO": "Portfolio"
+    "SERVICES": "Services",
+    "EXPERIENCE": "Experience",
+    "PORTFOLIO": "Portfolio",
+    "WORK": "Projects",
+    "STATISTICS": "Statistics",
+    "BLOG": "Blog",
+    "CONTACT": "Contact"
   },
   "HERO": {
-    "GREETING": "Hello, I am Dante Rognoni"
-  }
+    "GREETING": "Hello, I am Dante Rognoni!",
+    "IM": "I'm a",
+    "TYPING_1": "Full Stack Developer",
+    "TYPING_2": "University Technician in Programming",
+    "TYPING_3": "Spring Boot & Angular Enthusiast",
+    "CONNECT": "Let's Connect"
+  },
+  "ABOUT": {
+    "TITLE": "Who am I?",
+    "SUBTITLE": "I am Dante Rognoni, Junior Full-Stack Developer",
+    "DESCRIPTION": "Junior Full-Stack Developer and University Technician in Programming graduated from UTN. I have practical experience building web applications using Java, Spring Boot, Angular, and relational databases. Passionate about best practices, software architecture, and agile methodologies (SCRUM).",
+    "DOWNLOAD_CV": "Download CV",
+    "LANGUAGES": "Languages",
+    "LANGUAGES_VAL": "Java, TypeScript, JavaScript, SQL, C.",
+    "FRAMEWORKS": "Frameworks & Libraries",
+    "FRAMEWORKS_VAL": "Spring Boot, Angular, Hibernate, Maven.",
+    "DATABASES": "Databases",
+    "DATABASES_VAL": "SQL/NoSQL (PostgreSQL, MySQL, SQLite, MongoDB).",
+    "LINK": "assets/cv/Dante_Rognonii.pdf",
+    "LINK_2": "Dante_Rognonii.pdf",
+    "TOOLS": "Tools & Methodologies",
+    "TOOLS_VAL": "Scrum (Agile), Git, Postman."
+  },
+  "SERVICES": {
+  "TITLE": "Here's what I'm good at",
+  "CARD_1_TITLE": "Frontend Development",
+  "CARD_1_DESC": "Building responsive, dynamic, and user-friendly web interfaces using modern frameworks like Angular, TypeScript, HTML, and CSS.",
+  "CARD_2_TITLE": "Backend Development",
+  "CARD_2_DESC": "Designing robust and scalable RESTful APIs and server-side logic using Java, Spring Boot, and advanced Object-Oriented Programming principles.",
+  "CARD_3_TITLE": "Database Management",
+  "CARD_3_DESC": "Structuring and optimizing data storage solutions using both relational (SQL) and non-relational (NoSQL) databases.",
+  "CARD_4_TITLE": "Software Testing",
+  "CARD_4_DESC": "Ensuring code reliability and high-quality software delivery through comprehensive testing methodologies using tools like Mockito.",
+  "CARD_5_TITLE": "Looker studio && Power Bi",
+  "CARD_5_DESC": "Creation and management of large volumes of data for the creation of interactive dashboards.",
+  "CARD_6_TITLE": "Agile & Scrum",
+  "CARD_6_DESC": "Experienced in working with Scrum methodologies to ensure efficient project delivery, continuous improvement, and effective team collaboration."
+},
+  "EXPERIENCE": {
+    "TITLE": "Professional Experience",
+    "SUBTITLE": "My Journey as a Developer",
+    "JOB_1_TITLE": "Final Project: Stock Store",
+    "JOB_1_DATE": "Dec 2025 - Mar 2026",
+    "JOB_1_ROLE": "Full Stack Developer",
+    "JOB_1_DESC": "Web platform development (Back-office and Online Store) with multilayer architecture and MVC pattern.",
+    "JOB_1_BULLET_1": "Creation of RESTful API with Java, Spring Boot (Spring Data JPA, Hibernate) and security with Spring Security and JWT tokens (stateless).",
+    "JOB_1_BULLET_2": "Development of a responsive SPA with Angular, TypeScript, and SCSS/Angular Material.",
+    "JOB_1_BULLET_3": "Integration of Mercado Pago API for checkout and automated SMTP service."
+  },
+  "WORK": {
+    "TITLE": "Featured Projects",
+    "SUBTITLE": "A selection of my technical work",
+    "PROJ_1_TITLE": "Stock Store (Complete Platform)",
+    "PROJ_1_DATE": "Dec 2025 - Mar 2026",
+    "PROJ_1_TECH": "Java • Spring Boot • Angular • SQL",
+    "PROJ_1_DESC": "Complete development of an e-commerce platform. Implementation of REST API with global exception handling, JWT security, and Mercado Pago checkout. Responsive SPA frontend using Angular Material, Guards, and Interceptors.",
+    "PROJ_2_TITLE": "Backend Stock Store",
+    "PROJ_2_DATE": "Dec 2025 - Mar 2026",
+    "PROJ_2_TECH": "Spring Boot • Hibernate • JWT",
+    "PROJ_2_DESC": "Creation of the business logic and RESTful API. Management of user roles, data persistence, and service deployment.",
+    "PROJ_3_TITLE": "Frontend Stock Store",
+    "PROJ_3_DATE": "Dec 2025 - Mar 2026",
+    "PROJ_3_TECH": "Angular • TypeScript • Material",
+    "PROJ_3_DESC": "Intuitive user interface for inventory management and purchases, seamlessly integrated with the backend and payment services."
+  },
+  "STATISTICS": {
+    "STAT_1": "Years of Study",
+    "STAT_2": "Completed Projects",
+    "STAT_3": "Mastered Technologies"
+  },
+  "CONTACT": {
+    "TITLE": "Contact Me",
+    "SUBTITLE": "Do you have a question or a project in mind?",
+    "FORM": {
+      "NAME": "Name",
+      "NAME_PLACEHOLDER": "Your name",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "email@example.com",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "Write your message here...",
+      "SUBMIT": "Send Message"
+    },
+    "INFO": {
+      "EMAIL_LABEL": "My Email",
+      "LOCATION": "Location",
+      "LOCATION_VAL": "Mar del Plata, Argentina",
+      "LINKEDIN": "LinkedIn"
+    }
+  },
+  "PORTFOLIO": {
+    "TITLE": "Check out my Portfolio"
+  },
+  "BLOG": {
+    "TITLE": "I also like to write",
+    "READ_MORE": "Read More",
+    "POST_1_TITLE": "Best practices in Spring Boot",
+    "POST_1_DESC": "Exploring software architecture and exception handling."
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© Copyright 2026 Dante Rognoni. All rights reserved."
+  },
+  "TOOLS": "Herramientas y Metodologías",
+  "TOOLS_VAL": "Scrum (Ágil), Git, Postman."
 }

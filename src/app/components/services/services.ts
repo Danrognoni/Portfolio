@@ -1,9 +1,10 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import VanillaTilt from 'vanilla-tilt'; 
 
 @Component({
   selector: 'app-services',
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './services.html',
   styleUrl: './services.css',
 })

@@ -1,21 +1,24 @@
 <div class="bg-grey-50 relative overflow-hidden" id="about">
-    
   <div class="container relative z-10 flex flex-col items-center py-16 md:py-20 lg:flex-row">
     
     <div data-aos="fade-right" class="w-full text-center sm:w-3/4 lg:w-3/5 lg:text-left">
-      <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">Who am I?</h2>
-      <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">I'm Dante Rognoni, Full Stack Developer</h4>
+      <h2 class="font-header text-4xl font-semibold uppercase text-primary sm:text-5xl lg:text-6xl">
+        {{ 'ABOUT.TITLE' | translate }}
+      </h2>
+      <h4 class="pt-6 font-header text-xl font-medium text-black sm:text-2xl lg:text-3xl">
+        {{ 'ABOUT.SUBTITLE' | translate }}
+      </h4>
       <p class="pt-6 font-body leading-relaxed text-grey-20">
-        I am a developer who graduated from the Programming program at UTN in Mar del Plata. I am passionate about designing and building efficient solutions, ranging from database modeling and robust backend logic to creating dynamic and attractive frontend interfaces.
+        {{ 'ABOUT.DESCRIPTION' | translate }}
       </p>
 
       <div class="flex flex-col justify-center pt-8 sm:flex-row lg:justify-start">
         <a href="/assets/cv/Dante_Rognoni_ingles.pdf" download="Dante_Rognoni_ingles.pdf" class="rounded bg-primary px-8 py-3 text-center font-body text-sm font-bold uppercase text-white transition-colors hover:bg-yellow sm:mr-4">
-          Download Resume (EN)
+          {{ 'ABOUT.DOWNLOAD_CV' | translate }} (EN)
         </a>
         
         <a href="/assets/cv/Dante_Rognonii.pdf" download="Dante_Rognonii.pdf" class="mt-4 rounded border-2 border-primary px-8 py-3 text-center font-body text-sm font-bold uppercase text-primary transition-colors hover:bg-primary hover:text-white sm:mt-0">
-          Download CV (ES)
+          {{ 'ABOUT.DOWNLOAD_CV' | translate }} (ES)
         </a>
       </div>
     </div>
@@ -29,36 +32,44 @@
       <div data-aos="fade-left" data-aos-delay="100" 
            class="group relative z-10 overflow-hidden rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm p-6 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
         <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-blue-500 to-indigo-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
-        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">Languages</h4>
+        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">
+          {{ 'ABOUT.LANGUAGES' | translate }}
+        </h4>
         <p class="pt-2 font-body text-grey-20 font-medium">
-          Java (Advanced OOP), TypeScript, JavaScript, SQL, C.
+          {{ 'ABOUT.LANGUAGES_VAL' | translate }}
         </p>
       </div>
       
       <div data-aos="fade-left" data-aos-delay="200" 
            class="group relative z-10 overflow-hidden rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm p-6 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
         <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-blue-500 to-indigo-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
-        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">Frameworks & Libraries</h4>
+        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">
+          {{ 'ABOUT.FRAMEWORKS' | translate }}
+        </h4>
         <p class="pt-2 font-body text-grey-20 font-medium">
-          Spring Boot, Angular, Hibernate, Maven.
+          {{ 'ABOUT.FRAMEWORKS_VAL' | translate }}
         </p>
       </div>
 
       <div data-aos="fade-left" data-aos-delay="300" 
            class="group relative z-10 overflow-hidden rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm p-6 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
         <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-blue-500 to-indigo-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
-        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">Databases</h4>
+        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">
+          {{ 'ABOUT.DATABASES' | translate }}
+        </h4>
         <p class="pt-2 font-body text-grey-20 font-medium">
-          SQL/NoSQL (PostgreSQL, MySQL, SQLite, MongoDB).
+          {{ 'ABOUT.DATABASES_VAL' | translate }}
         </p>
       </div>
 
       <div data-aos="fade-left" data-aos-delay="400" 
            class="group relative z-10 overflow-hidden rounded-2xl bg-white/60 backdrop-blur-xl border border-white/80 shadow-sm p-6 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-[0_0_30px_rgba(59,130,246,0.3)]">
         <div class="absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b from-blue-500 to-indigo-600 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-500 origin-top"></div>
-        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">Tools & Methodologies</h4>
+        <h4 class="font-body font-bold uppercase text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-800 group-hover:from-blue-600 group-hover:to-indigo-600 transition-all duration-300">
+          {{ 'ABOUT.TOOLS' | translate }}
+        </h4>
         <p class="pt-2 font-body text-grey-20 font-medium">
-          Scrum (Agile), Git, Postman.
+          {{ 'ABOUT.TOOLS_VAL' | translate }}
         </p>
       </div>
 
