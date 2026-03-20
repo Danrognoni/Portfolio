@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import 'aos/dist/aos.css';
+
 
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }

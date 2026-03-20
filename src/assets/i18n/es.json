@@ -3,7 +3,7 @@
     "ABOUT": "Sobre mí",
     "SERVICES": "Servicios",
     "EXPERIENCE": "Experiencia",
-    "PORTFOLIO": "Portafolio",
+    "PORTFOLIO": "Portfolio",
     "WORK": "Proyectos",
     "STATISTICS": "Estadísticas",
     "BLOG": "Blog",
@@ -14,13 +14,13 @@
     "IM": "Soy",
     "TYPING_1": "Desarrollador Full Stack",
     "TYPING_2": "Técnico Universitario en Programación",
-    "TYPING_3": "Apasionado por Spring Boot y Angular",
-    "CONNECT": "Conectemos"
+    "TYPING_3": "Entusiasta de Spring Boot y Angular",
+    "CONNECT": "Contáctame"
   },
   "ABOUT": {
     "TITLE": "¿Quién soy?",
     "SUBTITLE": "Soy Dante Rognoni, Desarrollador Full-Stack Junior",
-    "DESCRIPTION": "Desarrollador Full-Stack Junior y Técnico Universitario en Programación graduado de la UTN. Poseo experiencia práctica en la creación de aplicaciones web utilizando Java, Spring Boot, Angular y bases de datos relacionales. Apasionado por las buenas prácticas, la arquitectura de software y las metodologías ágiles (SCRUM).",
+    "DESCRIPTION": "Desarrollador Full-Stack Junior y Técnico Universitario en Programación graduado de la UTN. Tengo experiencia práctica construyendo aplicaciones web usando Java, Spring Boot, Angular y bases de datos relacionales. Apasionado por las buenas prácticas, la arquitectura de software y las metodologías ágiles (SCRUM).",
     "DOWNLOAD_CV": "Descargar CV",
     "LANGUAGES": "Lenguajes",
     "LANGUAGES_VAL": "Java, TypeScript, JavaScript, SQL, C.",
@@ -28,61 +28,59 @@
     "FRAMEWORKS_VAL": "Spring Boot, Angular, Hibernate, Maven.",
     "DATABASES": "Bases de Datos",
     "DATABASES_VAL": "SQL/NoSQL (PostgreSQL, MySQL, SQLite, MongoDB).",
-    "LINK": "assets/cv/Dante_Rognonii.pdf",
-    "LINK_2": "Dante_Rognonii.pdf",
     "TOOLS": "Herramientas y Metodologías",
     "TOOLS_VAL": "Scrum (Ágil), Git, Postman."
   },
- "SERVICES": {
-  "TITLE": "En esto destaco",
-  "CARD_1_TITLE": "Desarrollo Frontend",
-  "CARD_1_DESC": "Creación de interfaces web responsivas, dinámicas y atractivas utilizando frameworks modernos como Angular, TypeScript, HTML y CSS.",
-  "CARD_2_TITLE": "Desarrollo Backend",
-  "CARD_2_DESC": "Diseño de APIs RESTful robustas y escalables, y lógica de servidor utilizando Java, Spring Boot y principios avanzados de Programación Orientada a Objetos.",
-  "CARD_3_TITLE": "Gestión de Bases de Datos",
-  "CARD_3_DESC": "Estructuración y optimización de soluciones de almacenamiento de datos utilizando bases de datos relacionales (SQL) y no relacionales (NoSQL).",
-  "CARD_4_TITLE": "Testing de Software",
-  "CARD_4_DESC": "Garantía de confiabilidad del código y entrega de software de alta calidad mediante metodologías de pruebas usando herramientas como Mockito.",
-  "CARD_5_TITLE": "Looker Studio y Power BI",
-  "CARD_5_DESC": "Creación y gestión de grandes volúmenes de datos para el diseño de paneles (dashboards) interactivos.",
-  "CARD_6_TITLE": "Metodologías Ágiles (Scrum)",
-  "CARD_6_DESC": "Experiencia trabajando con metodologías Scrum para asegurar la entrega eficiente de proyectos, mejora continua y colaboración efectiva en equipo.",
-  "CARD_7_TITLE": "Implementación de IA Local",
-    "CARD_7_DESC": "Despliegue de Modelos de Lenguaje (LLMs) privados en hardware local usando <b>Ollama</b> para entornos de Inteligencia Artificial seguros y personalizados."
-},
+  "SERVICES": {
+    "TITLE": "En qué soy bueno",
+    "CARD_1_TITLE": "Desarrollo Frontend",
+    "CARD_1_DESC": "Creación de interfaces web responsivas, dinámicas y fáciles de usar mediante frameworks modernos como Angular, TypeScript, HTML y CSS.",
+    "CARD_2_TITLE": "Desarrollo Backend",
+    "CARD_2_DESC": "Diseño de APIs REST robustas y escalables utilizando Java, Spring Boot y principios avanzados de Programación Orientada a Objetos.",
+    "CARD_3_TITLE": "Gestión de Bases de Datos",
+    "CARD_3_DESC": "Estructuración y optimización de soluciones de almacenamiento de datos utilizando bases de datos relacionales (SQL) y no relacionales (NoSQL).",
+    "CARD_4_TITLE": "Testing de Software",
+    "CARD_4_DESC": "Garantizando la fiabilidad del código y la entrega de software de alta calidad mediante metodologías de prueba exhaustivas con herramientas como Mockito.",
+    "CARD_5_TITLE": "Looker Studio y Power BI",
+    "CARD_5_DESC": "Creación y gestión de grandes volúmenes de datos para la generación de dashboards interactivos.",
+    "CARD_6_TITLE": "Agile & Scrum",
+    "CARD_6_DESC": "Experiencia trabajando con metodologías Scrum para asegurar entregas eficientes, mejora continua y colaboración efectiva en equipo.",
+    "CARD_7_TITLE": "Implementación de IA Local",
+    "CARD_7_DESC": "Despliegue de modelos de lenguaje (LLMs) privados en hardware local usando <b>Ollama</b> para entornos de IA seguros y personalizados."
+  },
   "EXPERIENCE": {
     "TITLE": "Experiencia Profesional",
-    "SUBTITLE": "Mi recorrido como Desarrollador",
+    "SUBTITLE": "Mi camino como Desarrollador",
     "JOB_1_TITLE": "Proyecto Final: Stock Store",
     "JOB_1_DATE": "Dic 2025 - Mar 2026",
     "JOB_1_ROLE": "Desarrollador Full Stack",
     "JOB_1_DESC": "Desarrollo de plataforma web (Back-office y Tienda Online) con arquitectura multicapa y patrón MVC.",
-    "JOB_1_BULLET_1": "Creación de API RESTful con Java, Spring Boot (Spring Data JPA, Hibernate) y seguridad con Spring Security y tokens JWT (stateless).",
+    "JOB_1_BULLET_1": "Creación de API REST con Java, Spring Boot (Spring Data JPA, Hibernate) y seguridad con Spring Security y tokens JWT.",
     "JOB_1_BULLET_2": "Desarrollo de SPA responsiva con Angular, TypeScript y SCSS/Angular Material.",
-    "JOB_1_BULLET_3": "Integración de API de Mercado Pago para checkout y servicio SMTP automatizado."
+    "JOB_1_BULLET_3": "Integración de la API de Mercado Pago para el checkout y servicio automático de SMTP."
   },
   "WORK": {
-  "TITLE": "Mis Proyectos",
-  "SUBTITLE": "Aquí están mis últimos repositorios en GitHub",
-  "PROJ_1_TYPE": "Proyecto Full Stack",
-  "PROJ_1_TITLE": "Stock-Store",
-  "PROJ_1_DESC": "Una plataforma integral para la gestión de inventario y operaciones de tienda online. Construida con tecnologías web modernas para manejar flujos completos de e-commerce.",
-  "PROJ_2_TYPE": "Aplicación Web",
-  "PROJ_2_TITLE": "Eventify",
-  "PROJ_2_DESC": "Una aplicación web completa diseñada para crear, gestionar y organizar eventos de forma eficiente, centrada en una experiencia de usuario limpia e intuitiva.",
-  "PROJ_3_TYPE": "Aplicación Financiera",
-  "PROJ_3_TITLE": "Money Tracker",
-  "PROJ_3_DESC": "Una aplicación intuitiva desarrollada para el seguimiento de ahorros personales y gestión del dinero, ayudando a los usuarios a mantener sus finanzas en orden.",
-  "PROJ_4_TYPE": "Análisis de Datos",
-  "PROJ_4_TITLE": "Dashboards en Looker Studio",
-  "PROJ_4_DESC": "Creación de paneles de análisis personalizados para un streamer, permitiendo visualizar y analizar datos de videojuegos y métricas de rendimiento en tiempo real.",
-  "PROJ_5_TYPE": "Proyecto UTN - Java",
-  "PROJ_5_TITLE": "Sistema de Gestión para Gimnasios",
-  "PROJ_5_DESC": "Un robusto sistema administrativo para gimnasios construido en Java. Maneja socios, personal, membresías y equipamiento mediante persistencia de archivos (JSON).",
-  "PROJ_6_TYPE": "Proyecto UTN - C",
-  "PROJ_6_TITLE": "Sistema de Reservas de Hotel",
-  "PROJ_6_DESC": "Aplicación de reservas de hotel basada en consola desarrollada en C. Maneja la disponibilidad de habitaciones, datos de clientes y reservas utilizando archivos binarios."
-},
+    "TITLE": "Mis Proyectos",
+    "SUBTITLE": "Mis últimos repositorios de GitHub",
+    "PROJ_1_TYPE": "Proyecto Full Stack",
+    "PROJ_1_TITLE": "Stock-Store",
+    "PROJ_1_DESC": "Plataforma integral para gestión de inventarios y tienda online. Construida para manejar flujos completos de e-commerce.",
+    "PROJ_2_TYPE": "Aplicación Web",
+    "PROJ_2_TITLE": "Eventify",
+    "PROJ_2_DESC": "Aplicación diseñada para crear, gestionar y organizar eventos eficientemente, con enfoque en la experiencia de usuario.",
+    "PROJ_3_TYPE": "Aplicación de Finanzas",
+    "PROJ_3_TITLE": "Money Tracker",
+    "PROJ_3_DESC": "Aplicación intuitiva desarrollada para el seguimiento de ahorros personales y gestión de dinero.",
+    "PROJ_4_TYPE": "Análisis de Datos",
+    "PROJ_4_TITLE": "Dashboards Looker Studio",
+    "PROJ_4_DESC": "Dashboards personalizados para visualizar y analizar métricas de videojuegos en tiempo real.",
+    "PROJ_5_TYPE": "Proyecto UTN - Java",
+    "PROJ_5_TITLE": "Sistema de Gestión de Gimnasios",
+    "PROJ_5_DESC": "Sistema administrativo robusto para gimnasios. Maneja socios, staff, membresías y equipamiento mediante persistencia de archivos JSON.",
+    "PROJ_6_TYPE": "Proyecto UTN - C",
+    "PROJ_6_TITLE": "Sistema de Reservas de Hotel",
+    "PROJ_6_DESC": "Aplicación de terminal para reservas de hotel desarrollada en C. Maneja disponibilidad, datos de clientes y archivos binarios."
+  },
   "STATISTICS": {
     "STAT_1": "Años de Estudio",
     "STAT_2": "Proyectos Completados",
@@ -90,33 +88,38 @@
   },
   "CONTACT": {
     "TITLE": "Contáctame",
-    "SUBTITLE": "¿Tienes una pregunta o un proyecto en mente?",
+    "SUBTITLE": "¿Tenés alguna pregunta o un proyecto en mente?",
     "FORM": {
       "NAME": "Nombre",
       "NAME_PLACEHOLDER": "Tu nombre",
-      "EMAIL": "Correo Electrónico",
+      "EMAIL": "Email",
       "EMAIL_PLACEHOLDER": "correo@ejemplo.com",
       "MESSAGE": "Mensaje",
-      "MESSAGE_PLACEHOLDER": "Escribe tu mensaje aquí...",
+      "MESSAGE_PLACEHOLDER": "Escribí tu mensaje acá...",
       "SUBMIT": "Enviar Mensaje"
     },
     "INFO": {
-      "EMAIL_LABEL": "Mi Correo",
+      "EMAIL_LABEL": "Mi Email",
       "LOCATION": "Ubicación",
       "LOCATION_VAL": "Mar del Plata, Argentina",
       "LINKEDIN": "LinkedIn"
     }
   },
   "PORTFOLIO": {
-    "TITLE": "Echa un vistazo a mi Portafolio"
+    "TITLE": "Mirá mi Portfolio"
   },
   "BLOG": {
     "TITLE": "También me gusta escribir",
-    "READ_MORE": "Leer Más",
+    "READ_MORE": "Leer más",
     "POST_1_TITLE": "Buenas prácticas en Spring Boot",
-    "POST_1_DESC": "Explorando la arquitectura de software y el manejo de excepciones."
+    "POST_1_DESC": "Explorando arquitectura de software y manejo de excepciones."
   },
   "FOOTER": {
     "COPYRIGHT": "© Copyright 2026 Dante Rognoni. Todos los derechos reservados."
+  },
+  "EASTER_EGG": {
+    "ALT_CAT": "Gatito trabajando",
+    "TITLE": "Gato Programador activado",
+    "SUBTITLE": "¡¡Descubriste el Easter Egg wachoo!!"
   }
 }
