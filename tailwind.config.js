@@ -10,6 +10,30 @@ module.exports = {
     fontFamily: {
       header: ["Raleway", "sans-serif"],
       body: ["Open Sans", "sans-serif"],
+      theme: {
+  extend: {
+    animation: {
+      blob: "blob 7s infinite",
+      float: "float 3s ease-in-out infinite",
+      'text-gradient': 'text-gradient 3s linear infinite',
+    },
+    keyframes: {
+      blob: {
+        "0%": { transform: "translate(0px, 0px) scale(1)" },
+        "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+        "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+        "100%": { transform: "translate(0px, 0px) scale(1)" },
+      },
+      float: {
+        '0%, 100%': { transform: 'translateY(0)' },
+        '50%': { transform: 'translateY(-10px)' },
+      },
+      'text-gradient': {
+        'to': { 'background-position': '200% center' },
+      }
+    }
+  }
+}
     },
     screens: {
       xs: "375px",
