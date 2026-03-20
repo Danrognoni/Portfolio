@@ -1,0 +1,127 @@
+{
+  "NAVBAR": {
+    "ABOUT": "About me",
+    "SERVICES": "Services",
+    "EXPERIENCE": "Experience",
+    "PORTFOLIO": "Portfolio",
+    "WORK": "Projects",
+    "STATISTICS": "Statistics",
+    "BLOG": "Blog",
+    "CONTACT": "Contact"
+  },
+  "HERO": {
+    "GREETING": "Hello, I am Dante Rognoni!",
+    "IM": "I'm a",
+    "TYPING_1": "Full Stack Developer",
+    "TYPING_2": "University Technician in Programming",
+    "TYPING_3": "Spring Boot & Angular Enthusiast",
+    "CONNECT": "Let's Connect"
+  },
+  "ABOUT": {
+    "TITLE": "Who am I?",
+    "SUBTITLE": "I am Dante Rognoni, Junior Full-Stack Developer",
+    "DESCRIPTION": "Junior Full-Stack Developer and University Technician in Programming graduated from UTN. I have practical experience building web applications using Java, Spring Boot, Angular, and relational databases. Passionate about best practices, software architecture, and agile methodologies (SCRUM).",
+    "DOWNLOAD_CV": "Download CV",
+    "LANGUAGES": "Languages",
+    "LANGUAGES_VAL": "Java, TypeScript, JavaScript, SQL, C.",
+    "FRAMEWORKS": "Frameworks & Libraries",
+    "FRAMEWORKS_VAL": "Spring Boot, Angular, Hibernate, Maven.",
+    "DATABASES": "Databases",
+    "DATABASES_VAL": "SQL/NoSQL (PostgreSQL, MySQL, SQLite, MongoDB).",
+    "LINK": "assets/cv/Dante_Rognonii.pdf",
+    "LINK_2": "Dante_Rognonii.pdf",
+    "TOOLS": "Tools & Methodologies",
+    "TOOLS_VAL": "Scrum (Agile), Git, Postman."
+  },
+  "SERVICES": {
+    "TITLE": "Here's what I'm good at",
+    "CARD_1_TITLE": "Frontend Development",
+    "CARD_1_DESC": "Building responsive, dynamic, and user-friendly web interfaces using modern frameworks like Angular, TypeScript, HTML, and CSS.",
+    "CARD_2_TITLE": "Backend Development",
+    "CARD_2_DESC": "Designing robust and scalable RESTful APIs and server-side logic using Java, Spring Boot, and advanced Object-Oriented Programming principles.",
+    "CARD_3_TITLE": "Database Management",
+    "CARD_3_DESC": "Structuring and optimizing data storage solutions using both relational (SQL) and non-relational (NoSQL) databases.",
+    "CARD_4_TITLE": "Software Testing",
+    "CARD_4_DESC": "Ensuring code reliability and high-quality software delivery through comprehensive testing methodologies using tools like Mockito.",
+    "CARD_5_TITLE": "Looker studio && Power Bi",
+    "CARD_5_DESC": "Creation and management of large volumes of data for the creation of interactive dashboards.",
+    "CARD_6_TITLE": "Agile & Scrum",
+    "CARD_6_DESC": "Experienced in working with Scrum methodologies to ensure efficient project delivery, continuous improvement, and effective team collaboration.",
+    "CARD_7_TITLE": "Local AI Implementation",
+    "CARD_7_DESC": "Deploying private Large Language Models (LLMs) on local hardware using <b>Ollama</b> for secure and customized AI environments."
+  },
+  "EXPERIENCE": {
+    "TITLE": "Professional Experience",
+    "SUBTITLE": "My Journey as a Developer",
+    "JOB_1_TITLE": "Final Project: Stock Store",
+    "JOB_1_DATE": "Dec 2025 - Mar 2026",
+    "JOB_1_ROLE": "Full Stack Developer",
+    "JOB_1_DESC": "Web platform development (Back-office and Online Store) with multilayer architecture and MVC pattern.",
+    "JOB_1_BULLET_1": "Creation of RESTful API with Java, Spring Boot (Spring Data JPA, Hibernate) and security with Spring Security and JWT tokens (stateless).",
+    "JOB_1_BULLET_2": "Development of a responsive SPA with Angular, TypeScript, and SCSS/Angular Material.",
+    "JOB_1_BULLET_3": "Integration of Mercado Pago API for checkout and automated SMTP service."
+  },
+  "WORK": {
+    "TITLE": "My Projects",
+    "SUBTITLE": "Here are my latest GitHub repositories",
+    "PROJ_1_TYPE": "Full Stack Project",
+    "PROJ_1_TITLE": "Stock-Store",
+    "PROJ_1_DESC": "A comprehensive platform for inventory management and online store operations. Built with modern web technologies to handle full e-commerce flows.",
+    "PROJ_2_TYPE": "Web Application",
+    "PROJ_2_TITLE": "Eventify",
+    "PROJ_2_DESC": "A complete web application designed to create, manage, and organize events efficiently, focusing on a clean and intuitive user experience.",
+    "PROJ_3_TYPE": "Finance Application",
+    "PROJ_3_TITLE": "Money Tracker",
+    "PROJ_3_DESC": "An intuitive application developed for personal savings tracking and money management, helping users keep their finances in order.",
+    "PROJ_4_TYPE": "Data Analytics",
+    "PROJ_4_TITLE": "Looker Studio Dashboards",
+    "PROJ_4_DESC": "Created custom analytics dashboards for a streamer to visualize and analyze video game data and performance metrics in real-time.",
+    "PROJ_5_TYPE": "UTN Project - Java",
+    "PROJ_5_TITLE": "Gym Management System",
+    "PROJ_5_DESC": "A robust administrative system for gyms built in Java. It handles members, staff, memberships, and equipment via file persistence (JSON).",
+    "PROJ_6_TYPE": "UTN Project - C",
+    "PROJ_6_TITLE": "Hotel Reservation System",
+    "PROJ_6_DESC": "Terminal-based hotel booking application developed in C. It handles room availability, customer data, and reservations using binary files."
+  },
+  "STATISTICS": {
+    "STAT_1": "Years of Study",
+    "STAT_2": "Completed Projects",
+    "STAT_3": "Mastered Technologies"
+  },
+  "CONTACT": {
+    "TITLE": "Contact Me",
+    "SUBTITLE": "Do you have a question or a project in mind?",
+    "FORM": {
+      "NAME": "Name",
+      "NAME_PLACEHOLDER": "Your name",
+      "EMAIL": "Email",
+      "EMAIL_PLACEHOLDER": "email@example.com",
+      "MESSAGE": "Message",
+      "MESSAGE_PLACEHOLDER": "Write your message here...",
+      "SUBMIT": "Send Message"
+    },
+    "INFO": {
+      "EMAIL_LABEL": "My Email",
+      "LOCATION": "Location",
+      "LOCATION_VAL": "Mar del Plata, Argentina",
+      "LINKEDIN": "LinkedIn"
+    }
+  },
+  "PORTFOLIO": {
+    "TITLE": "Check out my Portfolio"
+  },
+  "BLOG": {
+    "TITLE": "I also like to write",
+    "READ_MORE": "Read More",
+    "POST_1_TITLE": "Best practices in Spring Boot",
+    "POST_1_DESC": "Exploring software architecture and exception handling."
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© Copyright 2026 Dante Rognoni. All rights reserved."
+  },
+  "EASTER_EGG": {
+    "ALT_CAT": "Cat working",
+    "TITLE": "Cat Programmer activated",
+    "SUBTITLE": "You found the Easter Egg, buddy!!"
+  }
+}
