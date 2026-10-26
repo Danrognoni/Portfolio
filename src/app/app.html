@@ -1,35 +1,593 @@
-<div [class.animate-shake]="konamiActivated" class="min-h-screen">
-  <div class="relative">
-    <app-navbar></app-navbar>
-    <app-hero></app-hero>
-    <app-about></app-about>
-    <app-services></app-services>
-    <app-portfolio></app-portfolio>
-    <app-work></app-work>
-    <app-blog></app-blog>
-    <app-contact></app-contact>
-    <app-footer></app-footer>
+<a class="skip-link" href="#main">{{ content.skip }}</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#inicio" (click)="menuOpen = false" aria-label="Dante Rognoni"
+      ><span class="brand-symbol">dr<span>↗</span></span
+      ><span class="brand-name">Dante<br />Rognoni<span class="brand-dot">.</span></span></a
+    >
+    <nav
+      id="main-navigation"
+      class="navigation"
+      [class.is-open]="menuOpen"
+      [attr.aria-label]="language === 'es' ? 'Principal' : 'Main'"
+    >
+      @for (item of content.nav; track item.id) {
+        <a
+          [href]="'#' + item.id"
+          [class.active]="activeSection() === item.id"
+          [attr.aria-current]="activeSection() === item.id ? 'location' : null"
+          (click)="menuOpen = false"
+          >{{ item.text }}</a
+        >
+      }
+      <a href="#contacto" class="nav-contact" (click)="menuOpen = false"
+        >{{ content.talk }} <span aria-hidden="true">↗</span></a
+      >
+    </nav>
+    <div class="header-actions">
+      <button
+        class="language-button"
+        (click)="toggleLanguage()"
+        [attr.aria-label]="content.language"
+      >
+        <span [class.chosen]="language === 'es'">ES</span><span class="language-divider">/</span
+        ><span [class.chosen]="language === 'en'">EN</span>
+      </button>
+      <button
+        class="menu-button"
+        [attr.aria-label]="menuOpen ? content.close : content.menu"
+        [attr.aria-expanded]="menuOpen"
+        aria-controls="main-navigation"
+        (click)="menuOpen = !menuOpen"
+      >
+        <span>{{ menuOpen ? '×' : '☰' }}</span>
+      </button>
+    </div>
   </div>
-  <router-outlet></router-outlet>
-</div>
-
-<div *ngIf="konamiActivated" 
-     class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm pointer-events-none">
-  
-  <div class="absolute inset-0 bg-primary/20 animate-pulse"></div>
-
-  <div class="relative z-10 animate-fade-in-up">
-    <img src="assets/img/Cat_Working_GIF.gif" 
-         [alt]="'EASTER_EGG.ALT_CAT' | translate" 
-         class="w-80 h-80 md:w-100 md:h-100 object-contain drop-shadow-[0_0_30px_rgba(249,231,28,0.5)]">
+</header>
+<main id="main">
+  <section id="inicio" class="hero shell">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span>{{ content.eyebrow }}</p>
+      <h1>
+        {{ content.heroLine1 }}<br />{{ content.heroLine2 }}<br /><span class="serif orange">{{
+          content.heroLine3
+        }}</span>
+      </h1>
+      <p class="hero-intro">{{ content.intro }}</p>
+      <div class="hero-actions">
+        <a href="#proyectos" class="button button-dark"
+          >{{ content.viewWork }}<span aria-hidden="true">↗</span></a
+        ><a href="#sobre-mi" class="text-link"
+          >{{ content.aboutLink }}<span aria-hidden="true">→</span></a
+        >
+      </div>
+      <p class="location">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="10" r="3" />
+          <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z" /></svg
+        >{{ content.based }} <span>UTC−3</span>
+      </p>
+    </div>
+    <div class="hero-visual">
+      <div class="visual-topline">
+        <span>{{ content.heroCaption }}</span
+        ><span aria-hidden="true">✳</span>
+      </div>
+      <a href="#bycode" class="hero-bycode"
+        ><span class="bycode-word">bycode<span aria-hidden="true">✳</span></span
+        ><span>{{ content.softwarePurpose }} <span aria-hidden="true">↗</span></span></a
+      >
+      <div class="hero-window hero-photo">
+        <div class="window-bar">
+          <span class="window-dots"><i></i><i></i><i></i></span
+          ><span>julieta marateo / fotografía</span><span>↗</span>
+        </div>
+        <img
+          src="assets/projects/julieta-marateo.jpg"
+          [alt]="content.projects[2].imageAlt"
+          width="1912"
+          height="940"
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-window hero-dashboard">
+        <div class="window-bar">
+          <span class="window-dots"><i></i><i></i><i></i></span
+          ><span>pointly / customer loyalty</span><span>↗</span>
+        </div>
+        <img
+          src="assets/projects/pointly-clients.webp"
+          [alt]="content.projects[1].imageAlt"
+          width="1280"
+          height="685"
+        />
+      </div>
+      <div class="visual-bottomline">
+        <span>{{ content.heroNote }}</span
+        ><span class="visual-coordinates">38°00′ S · 57°33′ O</span>
+      </div>
+      <span class="orbit-stamp" aria-hidden="true">&lt;/&gt;</span>
+    </div>
+    <div class="hero-bottom">
+      <a href="#proyectos"
+        >↓ <span>{{ content.scroll }}</span></a
+      ><span>GO · ANGULAR · JAVA · POSTGRESQL</span>
+    </div>
+  </section>
+  <div class="expertise-ribbon">
+    <div class="shell ribbon-inner">
+      @for (item of content.ribbon; track item) {
+        <span>{{ item }}</span
+        ><span class="ribbon-star" aria-hidden="true">✳</span>
+      }
+    </div>
   </div>
-
-  <div class="mt-8 text-center animate-bounce">
-    <h2 class="text-yellow font-bold text-4xl md:text-6xl uppercase tracking-tighter">
-      {{ 'EASTER_EGG.TITLE' | translate }}
-    </h2>
-    <p class="text-white text-xl md:text-2xl mt-2 font-body">
-      {{ 'EASTER_EGG.SUBTITLE' | translate }}
+  <section id="proyectos" class="section shell work-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">{{ content.workLabel }}</p>
+        <h2>
+          {{ content.workTitle }}<br /><span class="serif">{{ content.workEmphasis }}</span>
+        </h2>
+      </div>
+      <p class="section-description">{{ content.workIntro }}</p>
+    </div>
+    <div class="filter-bar">
+      <div
+        class="filters"
+        [attr.aria-label]="language === 'es' ? 'Filtrar proyectos' : 'Filter projects'"
+      >
+        @for (item of content.filters; track item.id) {
+          <button
+            (click)="filter = item.id"
+            [class.selected]="filter === item.id"
+            [attr.aria-pressed]="filter === item.id"
+          >
+            {{ item.label }}
+            @if (item.id === 'all') {
+              <span>03</span>
+            }
+          </button>
+        }
+      </div>
+      <span class="result-count" aria-live="polite"
+        >0{{ projects.length }}
+        {{
+          projects.length === 1 ? (language === 'es' ? 'proyecto' : 'project') : content.results
+        }}</span
+      >
+    </div>
+    <div class="project-grid">
+      @for (project of projects; track project.id) {
+        <article [class]="'project-card project-' + project.id">
+          <button
+            class="project-image-button"
+            (click)="openProject(project, projectDialog)"
+            [attr.aria-label]="content.explore + ': ' + project.name"
+          >
+            <div class="project-visual-header">
+              <span class="project-identity">
+                @if (project.logo) {
+                  <img [src]="project.logo" alt="" width="28" height="28" />
+                }
+                {{ project.name }}</span
+              ><span class="project-number">0{{ content.projects.indexOf(project) + 1 }} / 03</span>
+            </div>
+            <div class="project-browser">
+              <div class="window-bar">
+                <span class="window-dots"><i></i><i></i><i></i></span
+                ><span>{{ project.domain }}</span
+                ><span>↗</span>
+              </div>
+              <img
+                [src]="project.image"
+                [alt]="project.imageAlt"
+                loading="lazy"
+                [attr.width]="
+                  project.id === 'julieta' ? 1912 : project.id === 'doctorchart' ? 1143 : 1280
+                "
+                [attr.height]="
+                  project.id === 'julieta' ? 940 : project.id === 'doctorchart' ? 845 : 685
+                "
+              />
+            </div>
+            <span class="image-explore"
+              >{{ content.explore }} <span aria-hidden="true">↗</span></span
+            >
+          </button>
+          <div class="project-info">
+            <div class="project-title-row">
+              <div>
+                <p class="eyebrow">{{ project.type }}</p>
+                <h3>{{ project.name }}<span class="project-name-dot">.</span></h3>
+              </div>
+              <button
+                class="circle-button"
+                (click)="openProject(project, projectDialog)"
+                [attr.aria-label]="content.explore + ': ' + project.name"
+              >
+                ↗
+              </button>
+            </div>
+            <h4>{{ project.headline }}</h4>
+            <p>{{ project.description }}</p>
+            <ul class="tags" aria-label="Stack">
+              @for (tech of project.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+            <a
+              class="project-live-link"
+              [href]="project.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ content.visit }} <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </article>
+      }
+    </div>
+  </section>
+  <section id="bycode" class="company-section">
+    <div class="shell company-layout">
+      <div class="company-copy">
+        <p class="eyebrow">{{ content.companyLabel }}</p>
+        <h2>
+          {{ content.companyHeadline }}<br /><span class="serif">{{
+            content.companyEmphasis
+          }}</span>
+        </h2>
+        <p class="company-lead">{{ content.companyDescription }}</p>
+        <p class="company-body">{{ content.companyDetail }}</p>
+        <a
+          href="https://bycode.com.ar"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button button-orange"
+          >{{ content.companyCta }} <span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div class="company-panel">
+        <div class="company-lockup">
+          <img
+            src="assets/projects/bycode-logo.svg"
+            alt="ByCode"
+            width="62"
+            height="62"
+            loading="lazy"
+          /><span class="bycode-word">bycode<span aria-hidden="true">✳</span></span>
+        </div>
+        <p class="company-tagline">{{ content.companySite }}</p>
+        <a
+          class="company-screenshot"
+          href="https://bycode.com.ar"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><img
+            src="assets/projects/bycode-home.jpg"
+            [alt]="
+              language === 'es'
+                ? 'Página pública de ByCode: software para comercios y consultorios'
+                : 'ByCode homepage: software for businesses and clinics'
+            "
+            width="1280"
+            height="720"
+            loading="lazy"
+        /></a>
+        <div class="company-product-links">
+          <a href="https://bycode.com.ar/doctorchart" target="_blank" rel="noopener noreferrer"
+            ><img
+              src="assets/projects/doctorchart-logo.svg"
+              alt=""
+              width="24"
+              height="24"
+            />DoctorChart <span>↗</span></a
+          ><a href="https://bycode.com.ar/pointly" target="_blank" rel="noopener noreferrer"
+            ><img src="assets/projects/pointly-logo.svg" alt="" width="24" height="24" />Pointly
+            <span>↗</span></a
+          >
+        </div>
+        <div class="ecosystem">
+          @for (item of content.ecosystem; track item.number) {
+            <div class="ecosystem-row">
+              <span>{{ item.number }}</span>
+              <div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+              </div>
+            </div>
+          }
+        </div>
+        <a
+          href="https://bycode.com.ar"
+          class="company-url"
+          target="_blank"
+          rel="noopener noreferrer"
+          >bycode.com.ar <span>↗</span></a
+        >
+      </div>
+    </div>
+  </section>
+  <section id="sobre-mi" class="section shell about-section">
+    <p class="eyebrow">{{ content.aboutLabel }}</p>
+    <div class="about-layout">
+      <figure class="portrait">
+        <div class="portrait-image">
+          <img
+            src="assets/img/dante.jpg"
+            [alt]="content.portraitAlt"
+            width="928"
+            height="936"
+            loading="lazy"
+          /><span class="portrait-star" aria-hidden="true">✳</span>
+        </div>
+        <figcaption>
+          <span>DANTE ROGNONI</span><span>{{ content.profileCaption }}</span>
+        </figcaption>
+      </figure>
+      <div class="about-copy">
+        <h2>
+          {{ content.aboutTitle }}<br /><span class="serif">{{ content.aboutEmphasis }}</span>
+        </h2>
+        <p class="about-lead">{{ content.aboutLead }}</p>
+        <p>{{ content.aboutBody }}</p>
+        <p>{{ content.aboutExtra }}</p>
+        <div class="cv-links">
+          <a href="assets/cv/CV_Dante_Rognoni.pdf" download class="button button-outline"
+            >{{ content.cv }} <span>ES ↓</span></a
+          ><a href="assets/cv/CV_Dante_Rognoni_ingles.pdf" download class="text-link"
+            >CV in English <span>↗</span></a
+          >
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Danrognoni" target="_blank" rel="noopener noreferrer"
+            >GitHub ↗</a
+          ><a
+            href="https://www.linkedin.com/in/danrognonii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          ><a
+            href="https://www.instagram.com/danrognonii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram ↗</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="journey">
+      <p class="eyebrow">{{ content.journey }}</p>
+      <div class="timeline">
+        @for (item of content.experience; track item.title) {
+          <article class="timeline-item">
+            <p class="timeline-period"><span></span>{{ item.period }}</p>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+  <section id="stack" class="stack-section section">
+    <div class="shell">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">{{ content.stackLabel }}</p>
+          <h2>
+            {{ content.stackTitle }}<br /><span class="serif">{{ content.stackEmphasis }}</span>
+          </h2>
+        </div>
+        <p class="section-description">{{ content.stackIntro }}</p>
+      </div>
+      <div class="skills-list">
+        @for (skill of content.skills; track skill.index) {
+          <article class="skill-row">
+            <span class="skill-index">{{ skill.index }}</span>
+            <div class="skill-description">
+              <h3>{{ skill.title }}</h3>
+              <p>{{ skill.description }}</p>
+            </div>
+            <ul class="tags">
+              @for (item of skill.items; track item) {
+                <li [class.highlight-tag]="item === 'Go' || item === 'DBeaver'">{{ item }}</li>
+              }
+            </ul>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="archive-section section shell">
+    <div class="archive-heading">
+      <div>
+        <p class="eyebrow">{{ content.archiveLabel }}</p>
+        <h2>{{ content.archiveTitle }}</h2>
+      </div>
+      <a
+        href="https://github.com/Danrognoni?tab=repositories"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-link"
+        >{{ content.githubCta }} <span>↗</span></a
+      >
+    </div>
+    <div class="archive-list">
+      @for (item of content.archive; track item.name; let index = $index) {
+        <article class="archive-row">
+          <span class="archive-number">0{{ index + 1 }}</span>
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.type }}</p>
+          <span class="archive-stack">{{ item.stack }}</span>
+        </article>
+      }
+    </div>
+    <aside class="curiosity">
+      <span class="curiosity-icon" aria-hidden="true">✳</span>
+      <div>
+        <p class="eyebrow">{{ content.curiosity }}</p>
+        <h3>{{ content.curiosityTitle }}</h3>
+        <p>{{ content.curiosityText }}</p>
+      </div>
+    </aside>
+  </section>
+  <section id="contacto" class="contact-section section">
+    <div class="shell contact-layout">
+      <div class="contact-copy">
+        <p class="eyebrow">{{ content.contactLabel }}</p>
+        <h2>
+          {{ content.contactTitle }}<br /><span class="serif">{{ content.contactEmphasis }}</span
+          ><span class="contact-arrow" aria-hidden="true">↗</span>
+        </h2>
+        <p>{{ content.contactIntro }}</p>
+        <div class="contact-email">
+          <span class="eyebrow">{{ content.emailLabel }}</span
+          ><a href="mailto:danrognoni@outlook.es">danrognoni&#64;outlook.es ↗</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/Danrognoni" target="_blank" rel="noopener noreferrer"
+            >GitHub ↗</a
+          ><a
+            href="https://www.linkedin.com/in/danrognonii/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn ↗</a
+          ><a href="https://bycode.com.ar" target="_blank" rel="noopener noreferrer">ByCode ↗</a>
+        </div>
+      </div>
+      <form
+        #contactForm
+        (submit)="sendMessage($event, contactForm)"
+        class="contact-form"
+        [attr.aria-busy]="formState() === 'sending'"
+      >
+        <div class="form-row">
+          <div>
+            <label for="contact-name">{{ content.name }}</label
+            ><input
+              id="contact-name"
+              name="name"
+              autocomplete="name"
+              [placeholder]="content.namePlaceholder"
+              required
+              maxlength="120"
+            />
+          </div>
+          <div>
+            <label for="contact-email">{{ content.email }}</label
+            ><input
+              id="contact-email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              [placeholder]="content.emailPlaceholder"
+              required
+              maxlength="254"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="contact-message">{{ content.message }}</label
+          ><textarea
+            id="contact-message"
+            name="message"
+            rows="5"
+            [placeholder]="content.messagePlaceholder"
+            required
+            maxlength="5000"
+          ></textarea>
+        </div>
+        <input
+          class="honeypot"
+          name="_gotcha"
+          tabindex="-1"
+          autocomplete="off"
+          aria-hidden="true"
+        /><button type="submit" class="button button-dark" [disabled]="formState() === 'sending'">
+          {{ formState() === 'sending' ? content.sending : content.send
+          }}<span aria-hidden="true">↗</span>
+        </button>
+        <p class="form-feedback" role="status" aria-live="polite">
+          @if (formState() === 'success') {
+            {{ content.success }}
+          }
+          @if (formState() === 'error') {
+            {{ content.error }}
+          }
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <a href="#inicio" class="footer-brand" aria-label="Dante Rognoni">dr<span>↗</span></a>
+    <p>
+      © {{ year }} {{ content.rights }}<span>{{ content.footer }}</span>
     </p>
+    <a href="#inicio" class="back-top">{{ content.backTop }} ↑</a>
   </div>
-</div>
+</footer>
+<dialog
+  #projectDialog
+  class="project-dialog"
+  (close)="selectedProject = null"
+  (click)="$event.target === projectDialog && projectDialog.close()"
+  aria-labelledby="project-dialog-title"
+>
+  <div class="dialog-shell">
+    <button
+      class="dialog-close"
+      (click)="projectDialog.close()"
+      [attr.aria-label]="content.close"
+      autofocus
+    >
+      ×
+    </button>
+    @if (selectedProject; as project) {
+      <div class="dialog-content">
+        <p class="eyebrow">{{ project.type }} / {{ content.inside }}</p>
+        <h2 id="project-dialog-title">{{ project.name }}<span class="orange">.</span></h2>
+        <h3 class="serif">{{ project.headline }}</h3>
+        <p class="dialog-intro">{{ project.description }}</p>
+        <div class="dialog-details">
+          <div>
+            <p class="eyebrow">{{ content.builtWith }}</p>
+            <ul class="tags">
+              @for (tech of project.stack; track tech) {
+                <li>{{ tech }}</li>
+              }
+            </ul>
+          </div>
+          <div>
+            <p class="eyebrow">{{ content.features }}</p>
+            <ul class="feature-list">
+              @for (feature of project.features; track feature) {
+                <li>{{ feature }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+        <a class="button button-dark" [href]="project.url" target="_blank" rel="noopener noreferrer"
+          >{{ content.visit }}<span>↗</span></a
+        >
+        <h4 class="gallery-title">{{ content.screenshots }}</h4>
+        <div class="project-gallery">
+          @for (shot of project.gallery; track shot.src) {
+            <figure>
+              <img [src]="shot.src" [alt]="shot.alt" loading="lazy" />
+              <figcaption>{{ shot.alt }}</figcaption>
+            </figure>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</dialog>

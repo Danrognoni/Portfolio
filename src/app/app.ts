@@ -1,85 +1,105 @@
-import { Component, HostListener } from '@angular/core';
-import { NavbarComponent } from "./components/navbar/navbar";
-import { Hero } from "./components/hero/hero";
-import { About } from "./components/about/about";
-import { Services } from "./components/services/services";
-import { Portfolio } from "./components/portfolio/portfolio";
-import { Work } from "./components/work/work";
-import { Blog } from "./components/blog/blog";
-import { Contact } from "./components/contact/contact";
-import { Footer } from "./components/footer/footer";
-import { RouterOutlet } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { AfterViewInit, Component, HostListener, OnDestroy, signal } from '@angular/core';
+import { portfolio, Language, Project } from './portfolio.data';
 
+@Component({ selector: 'app-root', standalone: true, templateUrl: './app.html' })
+export class App implements AfterViewInit, OnDestroy {
+  language: Language = 'es';
+  menuOpen = false;
+  activeSection = signal('inicio');
+  filter = 'all';
+  selectedProject: Project | null = null;
+  formState = signal<'idle' | 'sending' | 'success' | 'error'>('idle');
+  readonly year = new Date().getFullYear();
+  private observer?: IntersectionObserver;
 
-@Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.html',
-  imports: [NavbarComponent, Hero, About, Services, Portfolio, Work, Blog, Contact, Footer, RouterOutlet, CommonModule, TranslateModule]
-})
-
-export class App {
-  private konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown']; 
-  private currentSequence: string[] = [];
-  public konamiActivated = false;
-
-  private tapCount = 0;
-  private lastTapTime = 0;
-  private readonly TAP_THRESHOLD = 500; 
-
-  constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
-  }
-
-  @HostListener('window:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent) {
-    this.currentSequence.push(event.key);
-    if (this.currentSequence.length > this.konamiCode.length) {
-      this.currentSequence.shift();
+  constructor() {
+    try {
+      this.language = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'es';
+    } catch {
+      /* Storage is optional. */
     }
-    if (this.isKonamiCodeCorrect()) {
-      this.triggerEasterEgg();
+    this.updateMetadata();
+  }
+  get content() {
+    return portfolio[this.language];
+  }
+  get projects() {
+    return this.content.projects.filter((p) => this.filter === 'all' || p.category === this.filter);
+  }
+  ngAfterViewInit() {
+    const initialTarget = document.getElementById(window.location.hash.slice(1));
+    initialTarget?.scrollIntoView?.({ block: 'start', behavior: 'instant' });
+    if (typeof IntersectionObserver === 'undefined') return;
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries)
+          if (entry.isIntersecting) this.activeSection.set(entry.target.id);
+      },
+      { rootMargin: '-15% 0px -65% 0px', threshold: 0 },
+    );
+    document
+      .querySelectorAll('main > section[id]')
+      .forEach((section) => this.observer?.observe(section));
+  }
+  toggleLanguage() {
+    this.language = this.language === 'es' ? 'en' : 'es';
+    this.selectedProject = this.selectedProject
+      ? (this.content.projects.find((p) => p.id === this.selectedProject?.id) ?? null)
+      : null;
+    try {
+      localStorage.setItem('portfolio-language', this.language);
+    } catch {
+      /* Storage is optional. */
+    }
+    this.updateMetadata();
+  }
+  private updateMetadata() {
+    document.documentElement.lang = this.language;
+    document.title =
+      this.language === 'es'
+        ? 'Dante Rognoni — Desarrollador Full Stack · ByCode'
+        : 'Dante Rognoni — Full Stack Developer · ByCode';
+    document.querySelector('meta[name="description"]')?.setAttribute('content', this.content.meta);
+  }
+  @HostListener('document:keydown.escape') closeMenu() {
+    this.menuOpen = false;
+  }
+  @HostListener('document:click', ['$event'])
+  navigateWithinPage(event: MouseEvent) {
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest<HTMLAnchorElement>('a[href^="#"]');
+    const hash = link?.getAttribute('href');
+    if (!hash || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const target = document.getElementById(hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView?.({ block: 'start', behavior: 'instant' });
+    window.history.replaceState(null, '', hash);
+    this.menuOpen = false;
+  }
+  openProject(project: Project, dialog: HTMLDialogElement) {
+    this.selectedProject = project;
+    dialog.showModal();
+    dialog.scrollTop = 0;
+  }
+  async sendMessage(event: Event, form: HTMLFormElement) {
+    event.preventDefault();
+    if (!form.checkValidity() || this.formState() === 'sending') return;
+    this.formState.set('sending');
+    try {
+      const response = await fetch('https://formspree.io/f/mgonpqlg', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) throw new Error('Message could not be sent');
+      this.formState.set('success');
+      form.reset();
+    } catch {
+      this.formState.set('error');
     }
   }
-
-  @HostListener('window:click', ['$event'])
-  handleTapEvent(event: MouseEvent) {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - this.lastTapTime;
-
-    if (tapLength < this.TAP_THRESHOLD && tapLength > 0) {
-      this.tapCount++;
-    } else {
-      this.tapCount = 1;
-    }
-
-    this.lastTapTime = currentTime;
-
-    if (this.tapCount === 5) {
-      this.triggerEasterEgg();
-      this.tapCount = 0; 
-    }
-  }
-
-  private isKonamiCodeCorrect(): boolean {
-    return JSON.stringify(this.currentSequence) === JSON.stringify(this.konamiCode);
-  }
-
-  private triggerEasterEgg() {
-    if (this.konamiActivated) return; 
-
-    this.konamiActivated = true;
-    const audio = new Audio('https://www.myinstants.com/media/sounds/secret-revealed.mp3');
-    audio.volume = 0.5;
-    audio.play();
-
-    setTimeout(() => {
-      this.konamiActivated = false;
-      this.currentSequence = []; 
-      this.tapCount = 0; 
-    }, 5000); 
+  ngOnDestroy() {
+    this.observer?.disconnect();
   }
 }

@@ -1,59 +1,51 @@
-# Portfolio
+# Dante Rognoni · Portfolio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.4.
+Portfolio personal desarrollado en Angular. Presenta ByCode, DoctorChart, Pointly,
+el sitio de fotografía de Julieta Marateo, experiencia y conocimientos técnicos.
 
-## Development server
+## Desarrollo
 
-To start a local development server, run:
-
-```bash
-ng serve
+```sh
+npm ci
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+La aplicación se sirve en `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```sh
+npm run build
+npm test -- --watch=false
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+El build de producción queda en `dist/Portfolio/browser`.
+Si se publica en un subdirectorio, configurar `--base-href` con el destino real.
 
-```bash
-ng generate --help
-```
+## Contenido y diseño
 
-## Building
+- `src/app/portfolio.data.ts`: textos en español e inglés, enlaces, proyectos,
+  tecnologías y galerías. Es el lugar para agregar nuevos trabajos o capturas.
+- `src/app/app.html`: estructura, navegación, fichas de proyectos y formulario.
+- `src/app/app.ts`: idioma persistente, filtros, navegación, diálogos y contacto.
+- `src/styles.css`: sistema visual y ajustes responsive; respeta movimiento reducido.
+- `src/assets/projects/`: capturas reales y logos; ver `SOURCES.md`.
+- `src/assets/cv/`: los CV originales en español e inglés.
 
-To build the project run:
+La versión en español se muestra por defecto. El idioma elegido se conserva
+localmente cuando el navegador permite almacenamiento. Las galerías usan diálogos
+nativos con soporte de teclado y cierre con Escape.
 
-```bash
-ng build
-```
+## Contacto
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Se conserva el endpoint de Formspree que ya usaba el portfolio:
+`https://formspree.io/f/mgonpqlg`. El formulario muestra progreso, confirmación y
+error, conserva el mensaje si falla y ofrece el email directo. Las pruebas simulan
+las respuestas; no envían mensajes reales ni verifican la cuenta de Formspree.
 
-## Running unit tests
+## Alcance de la renovación
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Se conserva el proyecto Angular y los componentes anteriores en `src/app/components`
+como referencia; la nueva página se monta desde `App`. No se publican cambios ni
+se modifica la configuración de hosting desde este repositorio.
 
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Los proyectos anteriores se conservan en el archivo de trabajos. No se agregan
+capturas ficticias para proyectos de los que todavía no se dispone de imágenes.

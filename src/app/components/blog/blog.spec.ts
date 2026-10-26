@@ -1,3 +1,4 @@
+import { provideTranslateService } from '@ngx-translate/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Blog } from './blog';
@@ -8,9 +9,9 @@ describe('Blog', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Blog]
-    })
-    .compileComponents();
+      providers: [provideTranslateService()],
+      imports: [Blog],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(Blog);
     component = fixture.componentInstance;
