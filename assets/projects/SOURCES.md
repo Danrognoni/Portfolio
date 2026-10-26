@@ -20,10 +20,10 @@ Angular y PostgreSQL y los servicios de imágenes, correo, billing e IA se
 contrastaron con los manifiestos y código de los repositorios locales relacionados.
 Los paneles de Pointly contienen datos de demostración publicados por ByCode.
 
-## Julieta Marateo
+## Plataforma para portfolios fotográficos
 
 - Sitio indicado por el usuario: https://juli-fotografia-front-oafx.vercel.app/
-- `julieta-marateo.jpg`: captura adjuntada por el usuario, convertida a JPEG
+- `photography-portfolio.jpg`: captura adjuntada por el usuario, convertida a JPEG
   con calidad 88 y dimensiones originales para reducir su peso de ~3 MB a ~411 KB.
 - La descripción de galerías, administración, Spring Boot y SQLite se contrastó
   con `JuliFotografia-FRONT` y `JulietPhotography-Back`.
@@ -33,3 +33,7 @@ Los paneles de Pointly contienen datos de demostración publicados por ByCode.
 Retrato de Dante y archivos CV conservados del portfolio original.
 Los proyectos anteriores y la formación UTN proceden del contenido ya existente.
 Go y DBeaver fueron solicitados expresamente por el usuario.
+
+El proyecto se presenta como una plataforma para fotógrafos y creativos. La captura
+conserva la identidad visual de un sitio de ejemplo. ByCode se describe como una
+empresa construida por un equipo, según la aclaración del usuario.
