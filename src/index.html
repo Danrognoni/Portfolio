@@ -7,9 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Soy Dante Rognoni, desarrollador Full Stack y creador de ByCode. Conocé DoctorChart, Pointly y mis proyectos con Go, Angular, Java y PostgreSQL."
+      content="Soy Dante Rognoni, desarrollador Full Stack e integrante del equipo de ByCode. Conocé DoctorChart, Pointly y mis proyectos con Go, Angular, Java y PostgreSQL."
     />
     <meta name="theme-color" content="#f8f7f3" />
+    <script>
+      (() => {
+        let preference;
+        try {
+          preference = localStorage.getItem('portfolio-theme');
+        } catch {}
+        const dark =
+          preference === 'dark' ||
+          (preference !== 'light' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.querySelector('meta[name="theme-color"]').content = dark ? '#171b18' : '#f8f7f3';
+      })();
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Dante Rognoni — Full Stack Developer · ByCode" />
     <meta

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: light;
   --paper: #f8f7f3;
   --ink: #20211f;
   --muted: #696b64;
@@ -297,6 +298,28 @@ h2 .serif {
   padding: 10px 0;
   color: #7b7c75;
 }
+.theme-button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  color: var(--ink);
+  background: transparent;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+.theme-button svg {
+  width: 17px;
+  height: 17px;
+}
+.theme-button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
 .language-button .chosen {
   color: var(--ink);
   font-weight: 600;
@@ -434,12 +457,16 @@ h1 .serif {
   margin-left: 7px;
 }
 .hero-bycode > span + span {
+  min-width: 0;
   font: 7px var(--mono);
   letter-spacing: 0.08em;
   display: flex;
   flex-direction: column;
   gap: 7px;
   align-items: flex-end;
+}
+.hero-bycode > .bycode-word {
+  white-space: nowrap;
 }
 .hero-bycode > span + span > span {
   font-size: 25px;
@@ -795,7 +822,7 @@ h3 {
 .project-live-link:hover {
   color: var(--accent);
 }
-.project-julieta {
+.project-photography {
   grid-column: 1/-1;
   display: grid;
   grid-template-columns: 1.28fr 1fr;
@@ -804,33 +831,33 @@ h3 {
   padding-top: 17px;
   border-top: 1px solid var(--line);
 }
-.project-julieta .project-image-button {
+.project-photography .project-image-button {
   height: 360px;
   padding: 22px 24px 0;
   background: #dce4db;
   border-color: #d0d9cd;
 }
-.project-julieta .project-visual-header {
+.project-photography .project-visual-header {
   margin-bottom: 22px;
 }
-.project-julieta .project-identity {
+.project-photography .project-identity {
   font-family: var(--serif);
   font-weight: 400;
   font-size: 21px;
 }
-.project-julieta .project-browser {
+.project-photography .project-browser {
   transform: rotate(0deg);
   margin: 0;
   box-shadow: 0 16px 30px -15px #233d2e66;
 }
-.project-julieta .project-browser > img {
+.project-photography .project-browser > img {
   height: 270px;
   object-fit: cover;
 }
-.project-julieta .project-info {
+.project-photography .project-info {
   padding-top: 0;
 }
-.project-julieta .project-info > p {
+.project-photography .project-info > p {
   max-width: 420px;
 }
 .company-section {
@@ -1610,13 +1637,13 @@ h3 {
     height: 315px;
     padding: 20px 15px 0;
   }
-  .project-julieta {
+  .project-photography {
     gap: 30px;
   }
-  .project-julieta .project-image-button {
+  .project-photography .project-image-button {
     height: 330px;
   }
-  .project-julieta .project-browser > img {
+  .project-photography .project-browser > img {
     height: 245px;
   }
   .company-product-links {
@@ -1810,21 +1837,21 @@ h3 {
     font-size: 8px;
     padding: 4px 8px;
   }
-  .project-julieta {
+  .project-photography {
     gap: 25px;
     grid-template-columns: 1.05fr 1fr;
   }
-  .project-julieta .project-image-button {
+  .project-photography .project-image-button {
     height: 295px;
     padding: 18px 15px 0;
   }
-  .project-julieta .project-identity {
+  .project-photography .project-identity {
     font-size: 17px;
   }
-  .project-julieta .project-browser > img {
+  .project-photography .project-browser > img {
     height: 215px;
   }
-  .project-julieta .project-title-row h3 {
+  .project-photography .project-title-row h3 {
     font-size: 24px;
   }
   .company-section {
@@ -2216,28 +2243,28 @@ h3 {
     font-size: 8px;
     padding: 5px 9px;
   }
-  .project-julieta {
+  .project-photography {
     display: block;
     border-top: 0;
     padding-top: 0;
   }
-  .project-julieta .project-image-button {
+  .project-photography .project-image-button {
     height: 310px;
     padding: 22px 20px 0;
   }
-  .project-julieta .project-visual-header {
+  .project-photography .project-visual-header {
     margin-bottom: 22px;
   }
-  .project-julieta .project-identity {
+  .project-photography .project-identity {
     font-size: 21px;
   }
-  .project-julieta .project-browser > img {
+  .project-photography .project-browser > img {
     height: 225px;
   }
-  .project-julieta .project-info {
+  .project-photography .project-info {
     padding-top: 21px;
   }
-  .project-julieta .project-title-row h3 {
+  .project-photography .project-title-row h3 {
     font-size: 29px;
   }
   .image-explore {
@@ -2622,10 +2649,10 @@ h3 {
   .project-identity {
     font-size: 15px;
   }
-  .project-julieta .project-image-button {
+  .project-photography .project-image-button {
     height: 280px;
   }
-  .project-julieta .project-browser > img {
+  .project-photography .project-browser > img {
     height: 200px;
   }
   .company-panel {
@@ -2667,4 +2694,188 @@ h3 {
     transition: none !important;
     animation: none !important;
   }
+}
+/* Dark theme keeps project screenshots in their original colors. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #171b18;
+  --ink: #eeeee5;
+  --muted: #adb4aa;
+  --line: #354036;
+  --accent: #e49c79;
+}
+[data-theme='dark'] .site-header {
+  background: #171b18f5;
+}
+[data-theme='dark'] .brand-symbol {
+  background: #eeeee5;
+  color: #1c231d;
+}
+[data-theme='dark'] .brand-symbol > span {
+  color: #98482d;
+}
+[data-theme='dark'] .navigation > a {
+  color: #b6bdb1;
+}
+[data-theme='dark'] .navigation > a:hover,
+[data-theme='dark'] .navigation > a.active {
+  color: var(--ink);
+}
+[data-theme='dark'] .navigation .nav-contact {
+  border-color: #54604f;
+  color: var(--ink);
+}
+[data-theme='dark'] .language-button {
+  color: #9da895;
+}
+[data-theme='dark'] .language-divider {
+  color: #74816b;
+}
+[data-theme='dark'] .button-dark,
+[data-theme='dark'] .image-explore,
+[data-theme='dark'] .dialog-close,
+[data-theme='dark'] .skip-link {
+  background: #e6ad8e;
+  color: #1e251e;
+}
+[data-theme='dark'] .button-dark:hover,
+[data-theme='dark'] .dialog-close:hover {
+  background: #f4c4a7;
+}
+[data-theme='dark'] .filters button.selected {
+  background: #e7e9dd;
+  color: #20271f;
+  border-color: #e7e9dd;
+}
+[data-theme='dark'] .circle-button {
+  border-color: #52604c;
+}
+[data-theme='dark'] .circle-button:hover {
+  background: #e7e9dd;
+  color: #20271f;
+  border-color: #e7e9dd;
+}
+[data-theme='dark'] .hero-visual {
+  background: #242b24;
+  border-color: #3c4737;
+}
+[data-theme='dark'] .hero-bycode {
+  background: #34412e;
+  border-color: #506144;
+}
+[data-theme='dark'] .hero-window,
+[data-theme='dark'] .project-browser {
+  background: #263025;
+  border-color: #52604b;
+  box-shadow: 0 16px 30px -14px #0009;
+}
+[data-theme='dark'] .window-bar {
+  background: #2a3327;
+  color: #c1c9b9;
+  border-color: #44503d;
+}
+[data-theme='dark'] .window-dots i {
+  background: #718065;
+}
+[data-theme='dark'] .window-dots i:first-child {
+  background: #d38e70;
+}
+[data-theme='dark'] .visual-topline,
+[data-theme='dark'] .visual-bottomline,
+[data-theme='dark'] .hero-bottom,
+[data-theme='dark'] .location > span {
+  color: #a1ad93;
+}
+[data-theme='dark'] .visual-topline > span + span {
+  color: #b3c69c;
+}
+[data-theme='dark'] .orbit-stamp {
+  background: #34432b;
+  color: #c0d2a7;
+  border-color: #6b8057;
+}
+[data-theme='dark'] .expertise-ribbon,
+[data-theme='dark'] .stack-section,
+[data-theme='dark'] .curiosity {
+  background: #20271f;
+  border-color: var(--line);
+}
+[data-theme='dark'] .project-image-button {
+  background: #27372e;
+  border-color: #3e5748;
+}
+[data-theme='dark'] .project-pointly .project-image-button {
+  background: #2b3041;
+  border-color: #454d65;
+}
+[data-theme='dark'] .project-photography .project-image-button {
+  background: #2c3929;
+  border-color: #485c40;
+}
+[data-theme='dark'] .project-number {
+  color: #b4bda9;
+}
+[data-theme='dark'] .tags li {
+  color: #c1cbb7;
+  border-color: #485540;
+}
+[data-theme='dark'] .project-live-link {
+  border-color: #748564;
+}
+[data-theme='dark'] .company-section {
+  background: #1d271f;
+}
+[data-theme='dark'] .skill-row {
+  border-color: #3c4934;
+}
+[data-theme='dark'] .skill-index,
+[data-theme='dark'] .archive-stack {
+  color: #aab89c;
+}
+[data-theme='dark'] .skill-row .tags li {
+  background: #2a3525;
+  border-color: #4b5c3e;
+}
+[data-theme='dark'] .skill-row .tags .highlight-tag {
+  background: #453125;
+  color: #f2b895;
+  border-color: #79563c;
+}
+[data-theme='dark'] .curiosity-icon {
+  color: #b4c89a;
+}
+[data-theme='dark'] .contact-section {
+  background: #293425;
+  border-color: #44513b;
+}
+[data-theme='dark'] .contact-copy > p:not(.eyebrow),
+[data-theme='dark'] .feature-list {
+  color: #b9c7ad;
+}
+[data-theme='dark'] .contact-email > a {
+  border-color: #7b8e69;
+}
+[data-theme='dark'] .contact-form input,
+[data-theme='dark'] .contact-form textarea {
+  border-color: #728361;
+}
+[data-theme='dark'] .contact-form input::placeholder,
+[data-theme='dark'] .contact-form textarea::placeholder {
+  color: #aab99c;
+}
+[data-theme='dark'] .form-feedback {
+  color: #c5dcb0;
+}
+[data-theme='dark'] .footer-inner > p > span {
+  color: #a4b296;
+}
+[data-theme='dark'] .project-dialog {
+  border-color: #4b5a40;
+}
+[data-theme='dark'] .project-dialog::backdrop {
+  background: #070d08d9;
+}
+[data-theme='dark'] ::selection {
+  background: #a26442;
+  color: #fff7e9;
 }

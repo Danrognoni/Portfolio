@@ -17,15 +17,20 @@ describe('Portfolio', () => {
   afterEach(() => {
     vi.unstubAllGlobals();
     localStorage.clear();
+    delete document.documentElement.dataset['theme'];
   });
 
   it('presents the three featured projects and current technical skills', () => {
     expect(root.querySelector('h1')?.textContent).toContain('Ideas claras.');
     expect(root.querySelectorAll('.project-card')).toHaveLength(3);
-    expect(root.querySelector('#bycode')?.textContent).toContain('mi empresa de software');
+    expect(root.querySelector('#bycode')?.textContent).toContain('construimos en equipo');
+    expect(root.querySelector('.project-photography h3')?.textContent).toContain(
+      'Portfolio para fotógrafos',
+    );
+    expect(root.textContent).not.toContain('Julieta');
     expect(root.querySelector('#stack')?.textContent).toContain('Go');
     expect(root.querySelector('#stack')?.textContent).toContain('DBeaver');
-    expect(root.querySelector('.project-julieta a')?.getAttribute('href')).toBe(
+    expect(root.querySelector('.project-photography a')?.getAttribute('href')).toBe(
       'https://juli-fotografia-front-oafx.vercel.app/',
     );
   });
@@ -35,11 +40,11 @@ describe('Portfolio', () => {
     filters[1].click();
     fixture.detectChanges();
     expect(root.querySelectorAll('.project-card')).toHaveLength(2);
-    expect(root.querySelector('.project-julieta')).toBeNull();
+    expect(root.querySelector('.project-photography')).toBeNull();
     filters[2].click();
     fixture.detectChanges();
     expect(root.querySelectorAll('.project-card')).toHaveLength(1);
-    expect(root.querySelector('.project-julieta')).not.toBeNull();
+    expect(root.querySelector('.project-photography')).not.toBeNull();
     expect(root.querySelector('.project-number')?.textContent).toContain('03 / 03');
     expect(root.querySelector('.result-count')?.textContent).toContain('01 proyecto');
     expect(filters[2].getAttribute('aria-pressed')).toBe('true');
@@ -58,6 +63,36 @@ describe('Portfolio', () => {
     const second = TestBed.createComponent(App);
     expect(second.componentInstance.language).toBe('en');
     second.destroy();
+  });
+
+  it('switches theme, announces its state and restores the preference on a new visit', () => {
+    localStorage.setItem('portfolio-theme', 'light');
+    const button = root.querySelector<HTMLButtonElement>('.theme-button')!;
+    button.click();
+    fixture.detectChanges();
+    expect(document.documentElement.dataset['theme']).toBe('dark');
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    expect(button.getAttribute('aria-label')).toBe('Activar modo claro');
+    expect(localStorage.getItem('portfolio-theme')).toBe('dark');
+    const returningVisit = TestBed.createComponent(App);
+    expect(returningVisit.componentInstance.darkMode()).toBe(true);
+    returningVisit.destroy();
+    button.click();
+    fixture.detectChanges();
+    expect(document.documentElement.dataset['theme']).toBe('light');
+    expect(button.getAttribute('aria-pressed')).toBe('false');
+    expect(localStorage.getItem('portfolio-theme')).toBe('light');
+  });
+
+  it('uses the device theme when there is no saved preference', () => {
+    vi.stubGlobal('matchMedia', vi.fn().mockReturnValue({ matches: true }));
+    const deviceVisit = TestBed.createComponent(App);
+    expect(deviceVisit.componentInstance.darkMode()).toBe(true);
+    deviceVisit.destroy();
+    localStorage.setItem('portfolio-theme', 'light');
+    const explicitPreference = TestBed.createComponent(App);
+    expect(explicitPreference.componentInstance.darkMode()).toBe(false);
+    explicitPreference.destroy();
   });
 
   it('closes mobile navigation when following a section link', () => {

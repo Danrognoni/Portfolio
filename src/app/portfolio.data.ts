@@ -79,29 +79,28 @@ const esProjects: Project[] = [
     ],
   },
   {
-    id: 'julieta',
-    name: 'Julieta Marateo',
+    id: 'photography',
+    name: 'Portfolio para fotógrafos',
     category: 'web',
     type: 'WEB · FOTOGRAFÍA',
-    headline: 'Una mirada propia merece su espacio.',
+    headline: 'Tu trabajo, en primer plano.',
     description:
-      'Un portfolio de fotografía donde las imágenes llevan la historia. Diseño editorial, galerías y álbumes, una experiencia adaptable a cada pantalla y un panel para administrar el contenido.',
-    image: 'assets/projects/julieta-marateo.jpg',
-    imageAlt:
-      'Página de Julieta Marateo: Naturaleza sin filtro, con un lago y montañas como portada',
+      'Una plataforma para fotógrafos, artistas visuales y otros creativos que necesitan mostrar y compartir su trabajo. Permite subir imágenes, organizar proyectos en galerías y álbumes, y administrar el contenido desde un panel propio.',
+    image: 'assets/projects/photography-portfolio.jpg',
+    imageAlt: 'Ejemplo de portfolio fotográfico con una portada de paisaje, lago y montañas',
     url: 'https://juli-fotografia-front-oafx.vercel.app/',
-    domain: 'Julieta Marateo · Fotografía',
+    domain: 'Portfolio · Fotografía & creatividad',
     stack: ['Angular', 'TypeScript', 'Java', 'Spring Boot', 'SQLite'],
     features: [
-      'Dirección visual centrada en la fotografía y la narrativa de cada proyecto.',
-      'Portfolio, galerías y álbumes para explorar el trabajo de Julieta.',
-      'Panel de administración y gestión de archivos multimedia.',
+      'Una presentación visual que da protagonismo a las fotografías y a cada proyecto.',
+      'Galerías y álbumes para organizar, publicar y compartir trabajos creativos.',
+      'Panel de administración para subir imágenes y gestionar el contenido del sitio.',
       'Backend REST con Spring Boot, autenticación JWT y SQLite.',
     ],
     gallery: [
       {
-        src: 'assets/projects/julieta-marateo.jpg',
-        alt: 'Captura original de la portada de Julieta Marateo, proporcionada para este portfolio',
+        src: 'assets/projects/photography-portfolio.jpg',
+        alt: 'Ejemplo de portada de la plataforma para portfolios fotográficos',
       },
     ],
   },
@@ -151,31 +150,36 @@ Object.assign(enProjects[1], {
   ],
 });
 Object.assign(enProjects[2], {
+  name: 'Photography Portfolio',
+  domain: 'Photography & creative work',
   type: 'WEB · PHOTOGRAPHY',
-  headline: 'A unique perspective deserves a space.',
+  headline: 'Your work, front and center.',
   description:
-    'A photography portfolio where images tell the story. Editorial design, galleries and albums, a responsive experience and a content administration panel.',
-  imageAlt: 'Julieta Marateo photography homepage with a lake and mountains',
+    'A platform for photographers, visual artists and other creatives to showcase and share their work. Upload images, organize projects into galleries and albums, and manage the content through a dedicated administration panel.',
+  imageAlt: 'Photography portfolio example with a lake and mountains on its homepage',
   features: [
-    'Visual direction built around photography and project storytelling.',
-    'Portfolio, galleries and albums to explore Julieta’s work.',
-    'Administration panel and multimedia file management.',
+    'A visual presentation that puts photography and each project first.',
+    'Galleries and albums to organize, publish and share creative projects.',
+    'Administration panel for uploading images and managing website content.',
     'Spring Boot REST backend, JWT authentication and SQLite.',
   ],
   gallery: [
     {
-      src: 'assets/projects/julieta-marateo.jpg',
-      alt: 'Original screenshot of the Julieta Marateo homepage supplied for this portfolio',
+      src: 'assets/projects/photography-portfolio.jpg',
+      alt: 'Example homepage of the photography portfolio platform',
     },
   ],
 });
 export const portfolio = {
   es: {
-    meta: 'Soy Dante Rognoni, desarrollador Full Stack y creador de ByCode. Conocé DoctorChart, Pointly y mis proyectos con Go, Angular, Java y PostgreSQL.',
+    meta: 'Soy Dante Rognoni, desarrollador Full Stack e integrante del equipo de ByCode. Conocé DoctorChart, Pointly y mis proyectos con Go, Angular, Java y PostgreSQL.',
     skip: 'Saltar al contenido',
     menu: 'Abrir navegación',
     close: 'Cerrar',
     language: 'Switch to English',
+    darkTheme: 'Activar modo oscuro',
+    lightTheme: 'Activar modo claro',
+    photographyCaption: 'portfolio / fotografía & creatividad',
     nav: [
       { id: 'proyectos', text: 'Proyectos' },
       { id: 'bycode', text: 'ByCode' },
@@ -183,7 +187,7 @@ export const portfolio = {
       { id: 'stack', text: 'Stack' },
     ],
     talk: 'Hablemos',
-    eyebrow: 'DESARROLLADOR FULL STACK & CREADOR DE BYCODE',
+    eyebrow: 'DESARROLLADOR FULL STACK · EQUIPO BYCODE',
     heroLine1: 'Ideas claras.',
     heroLine2: 'Software que',
     heroLine3: 'hace la diferencia.',
@@ -220,13 +224,13 @@ export const portfolio = {
     features: 'QUÉ RESUELVE',
     screenshots: 'El producto en detalle',
     projects: esProjects,
-    companyLabel: '02 / MI EMPRESA',
-    companyHeadline: 'Construir algo',
-    companyEmphasis: 'propio.',
+    companyLabel: '02 / EQUIPO BYCODE',
+    companyHeadline: 'Crear en equipo,',
+    companyEmphasis: 'crecer juntos.',
     companyDescription:
-      'ByCode es mi empresa de software. Un lugar donde la tecnología se convierte en herramientas para el trabajo diario de comercios y profesionales de la salud.',
+      'ByCode es una empresa de software que construimos en equipo. Compartimos ideas, combinamos conocimientos y creamos herramientas para el trabajo diario de comercios y profesionales de la salud.',
     companyDetail:
-      'Desarrollo productos web y sus servicios: interfaces, APIs en Go, persistencia de datos e integraciones. DoctorChart y Pointly son parte de ese ecosistema, con aplicaciones especializadas y suscripciones independientes.',
+      'Trabajamos juntos en todo el recorrido del producto: interfaces, APIs en Go, persistencia de datos e integraciones. DoctorChart y Pointly forman parte de nuestro ecosistema, con aplicaciones especializadas y suscripciones independientes.',
     companyCta: 'Conocer ByCode',
     companySite: 'Software para el día a día.',
     ecosystem: [
@@ -251,7 +255,7 @@ export const portfolio = {
     aboutTitle: 'Dante,',
     aboutEmphasis: 'mucho gusto.',
     aboutLead:
-      'Desarrollador Full Stack, Técnico Universitario en Programación por la UTN y creador de ByCode.',
+      'Desarrollador Full Stack, Técnico Universitario en Programación por la UTN e integrante del equipo de ByCode.',
     aboutBody:
       'Me gusta entender cómo funcionan las cosas y construir soluciones de principio a fin. Trabajo en el frontend, el backend y los datos, conectando decisiones técnicas con lo que necesita la persona que va a usar el producto.',
     aboutExtra:
@@ -269,9 +273,9 @@ export const portfolio = {
       },
       {
         period: 'PROYECTO WEB',
-        title: 'Julieta Marateo · Fotografía',
+        title: 'Plataforma para fotógrafos',
         description:
-          'Portfolio visual, galerías y gestión de contenido. Angular, Spring Boot y SQLite.',
+          'Publicación de trabajos creativos, galerías y gestión de contenido para fotógrafos y artistas visuales. Angular, Spring Boot y SQLite.',
       },
       {
         period: 'DIC 2025 — MAR 2026',
@@ -382,11 +386,14 @@ export const portfolio = {
     rights: 'Dante Rognoni',
   },
   en: {
-    meta: 'Dante Rognoni, Full Stack Developer and creator of ByCode. Explore DoctorChart, Pointly and projects built with Go, Angular, Java and PostgreSQL.',
+    meta: 'Dante Rognoni, Full Stack Developer and member of the ByCode team. Explore DoctorChart, Pointly and projects built with Go, Angular, Java and PostgreSQL.',
     skip: 'Skip to content',
     menu: 'Open navigation',
     close: 'Close',
     language: 'Cambiar a español',
+    darkTheme: 'Enable dark mode',
+    lightTheme: 'Enable light mode',
+    photographyCaption: 'portfolio / photography & creativity',
     nav: [
       { id: 'proyectos', text: 'Projects' },
       { id: 'bycode', text: 'ByCode' },
@@ -394,7 +401,7 @@ export const portfolio = {
       { id: 'stack', text: 'Stack' },
     ],
     talk: 'Let’s talk',
-    eyebrow: 'FULL STACK DEVELOPER & CREATOR OF BYCODE',
+    eyebrow: 'FULL STACK DEVELOPER · BYCODE TEAM',
     heroLine1: 'Clear ideas.',
     heroLine2: 'Software that',
     heroLine3: 'makes a difference.',
@@ -426,13 +433,13 @@ export const portfolio = {
     features: 'WHAT IT SOLVES',
     screenshots: 'A closer look',
     projects: enProjects,
-    companyLabel: '02 / MY COMPANY',
-    companyHeadline: 'Building something',
-    companyEmphasis: 'of my own.',
+    companyLabel: '02 / THE BYCODE TEAM',
+    companyHeadline: 'Creating together,',
+    companyEmphasis: 'growing together.',
     companyDescription:
-      'ByCode is my software company. A place where technology becomes tools for the everyday work of businesses and healthcare professionals.',
+      'ByCode is a software company we build as a team. We share ideas, combine our skills and create tools for the everyday work of businesses and healthcare professionals.',
     companyDetail:
-      'I develop web products and their services: interfaces, Go APIs, data persistence and integrations. DoctorChart and Pointly belong to this ecosystem, with specialized applications and independent subscriptions.',
+      'We work together across the product: interfaces, Go APIs, data persistence and integrations. DoctorChart and Pointly are part of our ecosystem, with specialized applications and independent subscriptions.',
     companyCta: 'Explore ByCode',
     companySite: 'Software for everyday work.',
     ecosystem: [
@@ -457,7 +464,7 @@ export const portfolio = {
     aboutLabel: '03 / BEHIND THE CODE',
     aboutTitle: 'Dante,',
     aboutEmphasis: 'nice to meet you.',
-    aboutLead: 'Full Stack Developer, UTN graduate in Programming and creator of ByCode.',
+    aboutLead: 'Full Stack Developer, UTN graduate in Programming and member of the ByCode team.',
     aboutBody:
       'I like understanding how things work and building solutions from start to finish. I work across frontend, backend and data, connecting technical decisions with the needs of the person using the product.',
     aboutExtra:
@@ -475,9 +482,9 @@ export const portfolio = {
       },
       {
         period: 'WEB PROJECT',
-        title: 'Julieta Marateo · Photography',
+        title: 'Photography portfolio platform',
         description:
-          'Visual portfolio, galleries and content management. Angular, Spring Boot and SQLite.',
+          'Creative work publishing, galleries and content management for photographers and visual artists. Angular, Spring Boot and SQLite.',
       },
       {
         period: 'DEC 2025 — MAR 2026',

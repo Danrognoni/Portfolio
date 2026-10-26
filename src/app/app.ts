@@ -4,6 +4,7 @@ import { portfolio, Language, Project } from './portfolio.data';
 @Component({ selector: 'app-root', standalone: true, templateUrl: './app.html' })
 export class App implements AfterViewInit, OnDestroy {
   language: Language = 'es';
+  darkMode = signal(false);
   menuOpen = false;
   activeSection = signal('inicio');
   filter = 'all';
@@ -13,12 +14,34 @@ export class App implements AfterViewInit, OnDestroy {
   private observer?: IntersectionObserver;
 
   constructor() {
+    let theme: string | null = null;
     try {
       this.language = localStorage.getItem('portfolio-language') === 'en' ? 'en' : 'es';
+      theme = localStorage.getItem('portfolio-theme');
     } catch {
       /* Storage is optional. */
     }
+    this.darkMode.set(
+      theme === 'dark' ||
+        (theme !== 'light' && !!window.matchMedia?.('(prefers-color-scheme: dark)').matches),
+    );
+    this.applyTheme();
     this.updateMetadata();
+  }
+  toggleTheme() {
+    this.darkMode.update((dark) => !dark);
+    this.applyTheme();
+    try {
+      localStorage.setItem('portfolio-theme', this.darkMode() ? 'dark' : 'light');
+    } catch {
+      /* Theme switching also works without storage. */
+    }
+  }
+  private applyTheme() {
+    document.documentElement.dataset['theme'] = this.darkMode() ? 'dark' : 'light';
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', this.darkMode() ? '#171b18' : '#f8f7f3');
   }
   get content() {
     return portfolio[this.language];
